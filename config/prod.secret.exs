@@ -30,6 +30,17 @@ config :deck, DeckWeb.Endpoint,
   ],
   secret_key_base: secret_key_base
 
+config :arc,
+  storage: Arc.Storage.GCS,
+  bucket: "vr-deck-talks"
+
+config :goth, json: {:system, "GCP_CREDENTIALS"}
+
+config :cors_plug,
+  origin: ["https://vrdeck.surge.sh"],
+  max_age: 86400,
+  methods: ["GET", "POST"]
+
 # ## Using releases (Elixir v1.9+)
 #
 # If you are doing OTP releases, you need to instruct Phoenix

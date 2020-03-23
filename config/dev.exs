@@ -1,13 +1,13 @@
 use Mix.Config
 
 # Configure your database
-config :deck, Deck.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "deck_dev",
-  hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+# config :deck, Deck.Repo,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "deck_dev",
+#   hostname: "localhost",
+#   show_sensitive_data_on_connection_error: true,
+#   pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -21,6 +21,18 @@ config :deck, DeckWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: []
+
+config :arc,
+  storage: Arc.Storage.GCS,
+  bucket: "vr-deck-talks"
+
+config :goth,
+  json: "creds/google.json" |> File.read!()
+
+config :cors_plug,
+  origin: ["http://localhost:3000"],
+  max_age: 86400,
+  methods: ["GET", "POST"]
 
 # ## SSL Support
 #
@@ -66,3 +78,5 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+import_config "dev.secret.exs"

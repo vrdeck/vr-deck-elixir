@@ -43,7 +43,13 @@ defmodule Deck.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      # Deps
+      {:cors_plug, "~> 2.0"},
+      {:goth, "~> 1.1.0"},
+      {:arc_ecto, "~> 0.11.3"},
+      {:arc, "~> 0.11.0"},
+      {:arc_gcs, "~> 0.2.0"}
     ]
   end
 
