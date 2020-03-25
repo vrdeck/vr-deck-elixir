@@ -4,15 +4,16 @@ defmodule Deck.Talks.Talk do
 
   import Ecto.Changeset
 
-  alias Deck.Audio
+  alias Deck.AudioFile
+  alias Deck.MotionCaptureFile
 
   schema "talk" do
-    field :audio, Audio.Type
+    field :audio, AudioFile.Type
+    field :motion_capture, MotionCaptureFile.Type
     field :deck, :string
-    field :motion_capture, :string
+    field :theme, :string
     field :name, :string
     field :slug, :string
-    field :theme, :string
 
     timestamps()
   end
@@ -20,8 +21,8 @@ defmodule Deck.Talks.Talk do
   @doc false
   def changeset(talk, attrs) do
     talk
-    |> cast(attrs, [:name, :slug, :theme, :deck, :motion_capture])
-    |> cast_attachments(attrs, [:audio])
+    |> cast(attrs, [:name, :slug, :theme, :deck])
+    |> cast_attachments(attrs, [:audio, :motion_capture])
     |> validate_required([:name, :slug, :audio, :theme, :deck, :motion_capture])
     |> unique_constraint(:slug)
   end

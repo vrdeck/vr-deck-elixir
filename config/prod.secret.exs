@@ -32,7 +32,7 @@ config :deck, DeckWeb.Endpoint,
 
 config :arc,
   storage: Arc.Storage.GCS,
-  bucket: "vr-deck-talks"
+  bucket: "vrdeck-talks"
 
 config :goth, json: {:system, "GCP_CREDENTIALS"}
 

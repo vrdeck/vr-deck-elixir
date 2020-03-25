@@ -12,12 +12,6 @@ defmodule DeckWeb.TalkController do
   end
 
   def create(conn, %{"talk" => talk_params}) do
-    # TODO: Accept multi-part from data
-    # https://github.com/stavro/arc
-    # https://github.com/stavro/arc_ecto
-    # https://github.com/martide/arc_gcs
-    # https://github.com/axios/axios/pull/2805/files
-
     with {:ok, %Talk{} = talk} <- Talks.create_talk(talk_params) do
       conn
       |> put_status(:created)
