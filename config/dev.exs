@@ -32,7 +32,7 @@ config :goth,
 config :cors_plug,
   origin: ["http://localhost:3000"],
   max_age: 86400,
-  methods: ["GET", "POST"]
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
 
 # ## SSL Support
 #

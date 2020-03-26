@@ -34,12 +34,12 @@ config :arc,
   storage: Arc.Storage.GCS,
   bucket: "vrdeck-talks"
 
-config :goth, json: {:system, "GCP_CREDENTIALS"}
+config :goth, json: {:system, "GOOGLE_APPLICATION_CREDENTIALS"}
 
 config :cors_plug,
   origin: ["https://vrdeck.surge.sh"],
   max_age: 86400,
-  methods: ["GET", "POST"]
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
 
 # ## Using releases (Elixir v1.9+)
 #
