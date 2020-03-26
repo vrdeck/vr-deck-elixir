@@ -7,6 +7,9 @@ defmodule Deck.Talks.Talk do
   alias Deck.AudioFile
   alias Deck.MotionCaptureFile
 
+  @fields [:name, :slug, :theme, :deck]
+  @file_fields [:audio, :motion_capture]
+
   schema "talk" do
     field :audio, AudioFile.Type
     field :motion_capture, MotionCaptureFile.Type
@@ -21,9 +24,9 @@ defmodule Deck.Talks.Talk do
   @doc false
   def changeset(talk, attrs) do
     talk
-    |> cast(attrs, [:name, :slug, :theme, :deck])
-    |> cast_attachments(attrs, [:audio, :motion_capture])
-    |> validate_required([:name, :slug, :audio, :theme, :deck, :motion_capture])
+    |> cast(attrs, @fields)
+    |> cast_attachments(attrs, @file_fields)
+    |> validate_required(@fields ++ @file_fields)
     |> unique_constraint(:slug)
   end
 end
