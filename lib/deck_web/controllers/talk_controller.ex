@@ -20,8 +20,8 @@ defmodule DeckWeb.TalkController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    talk = Talks.get_talk!(id)
+  def show(conn, %{"id" => slug}) do
+    talk = Talks.get_talk!(slug)
     render(conn, "show.json", talk: talk)
   end
 

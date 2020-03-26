@@ -35,7 +35,7 @@ defmodule Deck.Talks do
       ** (Ecto.NoResultsError)
 
   """
-  def get_talk!(id), do: Repo.get!(Talk, id)
+  def get_talk!(slug), do: Repo.get_by!(Talk, slug: slug)
 
   @doc """
   Creates a talk.
