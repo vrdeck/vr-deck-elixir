@@ -34,6 +34,7 @@ defmodule Deck.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      # Phoenix
       {:phoenix, "~> 1.4.16"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
@@ -44,12 +45,18 @@ defmodule Deck.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      # Deps
+      # Misc
       {:cors_plug, "~> 2.0"},
+      {:httpoison, "~> 1.6"},
+      # File Storage
       {:goth, "~> 1.1.0"},
       {:arc_ecto, "~> 0.11.3"},
       {:arc, "~> 0.11.0"},
-      {:arc_gcs, "~> 0.2.0"}
+      {:arc_gcs, "~> 0.2.0"},
+      # Auth
+      {:guardian, "~> 2.0"},
+      {:ueberauth, "~> 0.6"},
+      {:ueberauth_google, "~> 0.8"}
     ]
   end
 

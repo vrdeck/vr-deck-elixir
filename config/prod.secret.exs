@@ -36,10 +36,20 @@ config :arc,
 
 config :goth, json: {:system, "GOOGLE_APPLICATION_CREDENTIALS"}
 
+config :deck, Deck.Auth.Redirect, redirect_url: "https://vrdeck.live/login-redirect"
+
 config :cors_plug,
-  origin: ["https://vrdeck.surge.sh"],
+  origin: ["https://vrdeck.live"],
   max_age: 86400,
   methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
+
+config :deck, Deck.Auth.Guardian,
+  issuer: "deck",
+  secret_key: {System, :get_env["GUARDIAN_SECRET_KEY"]}
+
+config :ueberauth, Ueberauth.Strategy.Google.OAuth,
+  client_id: {System, :get_env, ["GOOGLE_CLIENT_ID"]},
+  client_secret: {System, :get_env, ["GOOGLE_CLIENT_SECRET"]}
 
 # ## Using releases (Elixir v1.9+)
 #

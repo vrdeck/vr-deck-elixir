@@ -1,4 +1,4 @@
-defmodule DeckWeb.TalkController do
+defmodule DeckWeb.Api.TalkController do
   use DeckWeb, :controller
 
   alias Deck.Talks
