@@ -40,11 +40,11 @@ config :deck, Deck.Auth.Redirect, redirect_url: "https://vrdeck.live/talks"
 
 config :deck, Deck.Auth.Guardian,
   issuer: "deck",
-  secret_key: System.get_env("GUARDIAN_SECRET_KEY")}
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY")
 
 config :ueberauth, Ueberauth.Strategy.Google.OAuth,
-  client_id: System.get_env("GOOGLE_CLIENT_ID")},
-  client_secret: System.get_env("GOOGLE_CLIENT_SECRET")}
+  client_id: System.get_env("GOOGLE_CLIENT_ID"),
+  client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
 
 # ## Using releases (Elixir v1.9+)
 #

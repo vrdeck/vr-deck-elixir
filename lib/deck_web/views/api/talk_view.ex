@@ -1,6 +1,6 @@
-defmodule DeckWeb.TalkView do
+defmodule DeckWeb.Api.TalkView do
   use DeckWeb, :view
-  alias DeckWeb.TalkView
+  alias DeckWeb.Api.TalkView
   alias Deck.AudioFile
   alias Deck.MotionCaptureFile
 
