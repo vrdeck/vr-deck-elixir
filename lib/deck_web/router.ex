@@ -1,6 +1,15 @@
 defmodule DeckWeb.Router do
   use DeckWeb, :router
 
+  pipeline :maybe_browser_auth do
+    plug :fetch_session
+    plug(Deck.Auth.AuthPipeline)
+  end
+
+  pipeline :ensure_authed_access do
+    plug(Guardian.Plug.EnsureAuthenticated)
+  end
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -21,13 +30,19 @@ defmodule DeckWeb.Router do
     get "/auth/:provider/callback", AuthController, :callback
   end
 
+  scope "/api", DeckWeb.Api do
+    pipe_through [:api, :maybe_browser_auth]
+
+    resources "/talks", TalkController, only: [:index, :show]
+  end
+
   # Other scopes may use custom stacks.
   scope "/api", DeckWeb.Api do
-    pipe_through :api
+    pipe_through [:api, :maybe_browser_auth, :ensure_authed_access]
 
-    get "/me", UserController, :me
-
-    resources "/users", UserController, only: [:create, :update, :delete]
-    resources "/talks", TalkController
+    get "/me", UserController, :show
+    post "/me", UserController, :update
+    delete "/me", UserController, :delete
+    resources "/talks", TalkController, only: [:create, :update, :delete]
   end
 end

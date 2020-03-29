@@ -28,7 +28,7 @@ defmodule DeckWeb.AuthController do
       {:ok, user} ->
         conn
         |> Auth.sign_in(user)
-        |> redirect(to: Redirect.editor_redirect())
+        |> redirect(external: Redirect.editor_redirect())
 
       {:error, _changeset} ->
         conn

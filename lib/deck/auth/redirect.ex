@@ -1,5 +1,7 @@
 defmodule Deck.Auth.Redirect do
   def editor_redirect() do
-    Application.get_env(__MODULE__, :redirect_url)
+    :deck
+    |> Application.get_env(__MODULE__)
+    |> Keyword.fetch!(:redirect_url)
   end
 end
