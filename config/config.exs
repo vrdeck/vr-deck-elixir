@@ -31,6 +31,16 @@ config :ueberauth, Ueberauth,
     google: {Ueberauth.Strategy.Google, []}
   ]
 
+config :cors_plug,
+  origin: [
+    "https://vrdeck.live",
+    "https://view.vrdeck.live",
+    "http://localhost:3000",
+    "http://localhost:3001"
+  ],
+  max_age: 86400,
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

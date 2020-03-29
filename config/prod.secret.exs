@@ -38,11 +38,6 @@ config :goth, json: {:system, "GOOGLE_APPLICATION_CREDENTIALS"}
 
 config :deck, Deck.Auth.Redirect, redirect_url: "https://vrdeck.live/talks"
 
-config :cors_plug,
-  origin: ["https://vrdeck.live"],
-  max_age: 86400,
-  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
-
 config :deck, Deck.Auth.Guardian,
   issuer: "deck",
   secret_key: System.get_env("GUARDIAN_SECRET_KEY")}
