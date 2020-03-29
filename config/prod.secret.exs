@@ -36,7 +36,7 @@ config :arc,
 
 config :goth, json: {:system, "GOOGLE_APPLICATION_CREDENTIALS"}
 
-config :deck, Deck.Auth.Redirect, redirect_url: "https://vrdeck.live/login-redirect"
+config :deck, Deck.Auth.Redirect, redirect_url: "https://vrdeck.live/talks"
 
 config :cors_plug,
   origin: ["https://vrdeck.live"],

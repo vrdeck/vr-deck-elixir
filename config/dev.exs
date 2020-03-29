@@ -30,7 +30,7 @@ config :arc,
 config :goth,
   json: "creds/google.json" |> File.read!()
 
-config :deck, Deck.Auth.Redirect, redirect_url: "http://localhost:3000/login-redirect"
+config :deck, Deck.Auth.Redirect, redirect_url: "http://localhost:3000/talks"
 
 config :cors_plug,
   origin: ["http://localhost:3000"],
