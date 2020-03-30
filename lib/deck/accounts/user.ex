@@ -2,6 +2,8 @@ defmodule Deck.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Deck.Talks.Talk
+
   @primary_key false
   schema "users" do
     field :id, :string, primary_key: true
@@ -9,6 +11,7 @@ defmodule Deck.Accounts.User do
     field :email, :string
     field :name, :string
     field :avatar, :string
+    has_many :talks, Talk, references: :id
 
     timestamps()
   end

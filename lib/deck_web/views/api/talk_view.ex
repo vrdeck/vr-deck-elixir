@@ -19,8 +19,8 @@ defmodule DeckWeb.Api.TalkView do
       slug: talk.slug,
       audio: audio_url(talk),
       motion_capture: motion_capture_url(talk),
-      theme: Jason.decode!(talk.theme),
-      deck: Jason.decode!(talk.deck)
+      theme: talk.theme,
+      deck: talk.deck
     }
   end
 

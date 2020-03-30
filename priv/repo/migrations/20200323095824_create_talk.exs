@@ -12,8 +12,8 @@ defmodule Deck.Repo.Migrations.CreateTalk do
       add :motion_capture, :string
 
       # embedded JSON
-      add :theme, :map
-      add :deck, :map
+      add :theme, :jsonb, default: "{}"
+      add :deck, :jsonb, default: "{}"
 
       timestamps()
     end

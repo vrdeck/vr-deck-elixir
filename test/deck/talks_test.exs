@@ -19,9 +19,9 @@ defmodule Deck.TalksTest do
       talk
     end
 
-    test "list_talk/0 returns all talk" do
+    test "list_talks/0 returns all talk" do
       talk = talk_fixture()
-      assert Talks.list_talk() == [talk]
+      assert Talks.list_talks() == [talk]
     end
 
     test "get_talk!/1 returns the talk with given id" do

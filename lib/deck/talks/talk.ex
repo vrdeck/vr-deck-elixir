@@ -6,6 +6,7 @@ defmodule Deck.Talks.Talk do
 
   alias Deck.AudioFile
   alias Deck.MotionCaptureFile
+  alias Deck.Accounts.User
 
   @fields [:name, :slug, :theme, :deck]
   @file_fields [:audio, :motion_capture]
@@ -13,10 +14,11 @@ defmodule Deck.Talks.Talk do
   schema "talk" do
     field :audio, AudioFile.Type
     field :motion_capture, MotionCaptureFile.Type
-    field :deck, :string
-    field :theme, :string
+    field :deck, :map
+    field :theme, :map
     field :name, :string
     field :slug, :string
+    belongs_to :user, User, type: :string
 
     timestamps()
   end
@@ -26,7 +28,7 @@ defmodule Deck.Talks.Talk do
     talk
     |> cast(attrs, @fields)
     |> cast_attachments(attrs, @file_fields)
-    |> validate_required(@fields ++ @file_fields)
+    |> validate_required(@fields)
     |> unique_constraint(:slug)
   end
 end

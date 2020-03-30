@@ -43,6 +43,6 @@ defmodule DeckWeb.Router do
     get "/me", UserController, :show
     post "/me", UserController, :update
     delete "/me", UserController, :delete
-    resources "/talks", TalkController, only: [:create, :update, :delete]
+    resources "/me/talks", MyTalkController, only: [:index, :show, :create, :update, :delete]
   end
 end
