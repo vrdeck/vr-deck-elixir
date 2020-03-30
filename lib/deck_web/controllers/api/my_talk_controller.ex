@@ -6,13 +6,15 @@ defmodule DeckWeb.Api.MyTalkController do
   alias Deck.Auth
   alias DeckWeb.Api.TalkView
 
+  plug :put_view, TalkView
+
   action_fallback DeckWeb.FallbackController
 
   def index(conn, _params) do
     user = Auth.current_user(conn)
 
     talk = Talks.list_talks(user)
-    render(conn, TalkView, "index.json", talk: talk)
+    render(conn, "index.json", talk: talk)
   end
 
   def create(conn, %{"talk" => talk_params}) do
@@ -22,7 +24,7 @@ defmodule DeckWeb.Api.MyTalkController do
       conn
       |> put_status(:created)
       |> put_resp_header("location", Routes.talk_path(conn, :show, talk))
-      |> render(TalkView, "show.json", talk: talk)
+      |> render("show.json", talk: talk)
     end
   end
 
@@ -30,7 +32,7 @@ defmodule DeckWeb.Api.MyTalkController do
     user = Auth.current_user(conn)
 
     talk = Talks.get_talk_by_slug!(slug, user)
-    render(conn, TalkView, "show.json", talk: talk)
+    render(conn, "show.json", talk: talk)
   end
 
   def update(conn, %{"id" => id, "talk" => talk_params}) do
@@ -39,7 +41,7 @@ defmodule DeckWeb.Api.MyTalkController do
     talk = Talks.get_talk!(id, user)
 
     with {:ok, %Talk{} = talk} <- Talks.update_talk(talk, talk_params) do
-      render(conn, TalkView, "show.json", talk: talk)
+      render(conn, "show.json", talk: talk)
     end
   end
 
