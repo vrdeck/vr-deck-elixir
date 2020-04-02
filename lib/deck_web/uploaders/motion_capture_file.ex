@@ -9,8 +9,8 @@ defmodule Deck.MotionCaptureFile do
     ~w(.json) |> Enum.member?(Path.extname(file.file_name))
   end
 
-  def filename(version, {file, scope}) do
+  def filename(version, {file, talk}) do
     file_name = Path.basename(file.file_name, Path.extname(file.file_name))
-    "#{scope.slug}/#{version}_#{file_name}"
+    "#{talk.id}/#{version}_#{file_name}"
   end
 end
