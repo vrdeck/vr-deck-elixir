@@ -7,7 +7,9 @@ defmodule DeckWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_deck_key",
-    signing_salt: "+nZzBbGu"
+    signing_salt: "+nZzBbGu",
+    secure: true,
+    extra: "SameSite=None",
   ]
 
   socket "/socket", DeckWeb.UserSocket,
