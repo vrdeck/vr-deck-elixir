@@ -2,7 +2,7 @@ defmodule DeckWeb.Api.TalkImageView do
   use DeckWeb, :view
 
   alias DeckWeb.Api.TalkImageView
-  alias Deck.AudioFile
+  alias Deck.ImageFile
 
   def render("index.json", %{talk_images: talk_images}) do
     %{data: render_many(talk_images, TalkImageView, "talk_image.json")}
@@ -20,6 +20,6 @@ defmodule DeckWeb.Api.TalkImageView do
   end
 
   def image_url(talk_image) do
-    AudioFile.url({talk_image.image, talk_image})
+    ImageFile.url({talk_image.image, talk_image})
   end
 end

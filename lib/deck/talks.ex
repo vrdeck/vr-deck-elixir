@@ -69,11 +69,18 @@ defmodule Deck.Talks do
   end
 
   def create_image(talk, attrs) do
-    talk
-    |> Ecto.build_assoc(:images)
-    |> Repo.preload(:talk)
-    |> TalkImage.changeset(attrs)
-    |> Repo.insert()
+    image =
+      talk
+      |> Ecto.build_assoc(:images)
+      |> Repo.preload(:talk)
+
+    # Hack to work around ids not populated until record is inserted, but img needs an ID.
+    with {:ok, image} <- Repo.insert(image),
+         {:ok, image} <- image |> IO.inspect() |> TalkImage.changeset(attrs) |> Repo.update() do
+      {:ok, image}
+    else
+      {:error, changeset} -> {:error, changeset}
+    end
   end
 
   def update_image(talk_image, attrs) do
