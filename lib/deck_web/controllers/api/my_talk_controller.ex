@@ -23,7 +23,6 @@ defmodule DeckWeb.Api.MyTalkController do
     with {:ok, %Talk{} = talk} <- Talks.create_talk(talk_params, user) do
       conn
       |> put_status(:created)
-      |> put_resp_header("location", Routes.talk_path(conn, :show, talk))
       |> render("show.json", talk: talk)
     end
   end

@@ -9,7 +9,7 @@ defmodule DeckWeb.Endpoint do
     key: "_deck_key",
     signing_salt: "+nZzBbGu",
     secure: true,
-    extra: "SameSite=None",
+    extra: "SameSite=None"
   ]
 
   socket "/socket", DeckWeb.UserSocket,

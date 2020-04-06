@@ -2,7 +2,7 @@ defmodule DeckWeb.Router do
   use DeckWeb, :router
 
   pipeline :maybe_browser_auth do
-    plug :fetch_session
+    plug(:fetch_session)
     plug(Deck.Auth.AuthPipeline)
   end
 
@@ -11,38 +11,41 @@ defmodule DeckWeb.Router do
   end
 
   pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
+    plug(:accepts, ["html"])
+    plug(:fetch_session)
+    plug(:fetch_flash)
+    plug(:protect_from_forgery)
+    plug(:put_secure_browser_headers)
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
   end
 
   scope "/", DeckWeb do
-    pipe_through :browser
+    pipe_through(:browser)
 
     # Auth
-    get "/auth/:provider", AuthController, :request
-    get "/auth/:provider/callback", AuthController, :callback
+    get("/auth/:provider", AuthController, :request)
+    get("/auth/:provider/callback", AuthController, :callback)
   end
 
   scope "/api", DeckWeb.Api do
-    pipe_through [:api, :maybe_browser_auth]
+    pipe_through([:api, :maybe_browser_auth])
 
-    resources "/talks", TalkController, only: [:index, :show]
+    resources("/talks", TalkController, only: [:index, :show])
   end
 
   # Other scopes may use custom stacks.
   scope "/api", DeckWeb.Api do
-    pipe_through [:api, :maybe_browser_auth, :ensure_authed_access]
+    pipe_through([:api, :maybe_browser_auth, :ensure_authed_access])
 
-    get "/me", UserController, :show
-    post "/me", UserController, :update
-    delete "/me", UserController, :delete
-    resources "/me/talks", MyTalkController, only: [:index, :show, :create, :update, :delete]
+    get("/me", UserController, :show)
+    post("/me", UserController, :update)
+    delete("/me", UserController, :delete)
+
+    resources "/me/talks", MyTalkController, only: [:index, :show, :create, :update, :delete] do
+      resources("/images", TalkImageController, only: [:create, :update, :delete])
+    end
   end
 end

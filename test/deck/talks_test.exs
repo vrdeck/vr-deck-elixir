@@ -6,8 +6,22 @@ defmodule Deck.TalksTest do
   describe "talk" do
     alias Deck.Talks.Talk
 
-    @valid_attrs %{audio: "some audio", deck: "some deck", motion_capture: "some motion_capture", name: "some name", slug: "some slug", theme: "some theme"}
-    @update_attrs %{audio: "some updated audio", deck: "some updated deck", motion_capture: "some updated motion_capture", name: "some updated name", slug: "some updated slug", theme: "some updated theme"}
+    @valid_attrs %{
+      audio: "some audio",
+      deck: "some deck",
+      motion_capture: "some motion_capture",
+      name: "some name",
+      slug: "some slug",
+      theme: "some theme"
+    }
+    @update_attrs %{
+      audio: "some updated audio",
+      deck: "some updated deck",
+      motion_capture: "some updated motion_capture",
+      name: "some updated name",
+      slug: "some updated slug",
+      theme: "some updated theme"
+    }
     @invalid_attrs %{audio: nil, deck: nil, motion_capture: nil, name: nil, slug: nil, theme: nil}
 
     def talk_fixture(attrs \\ %{}) do

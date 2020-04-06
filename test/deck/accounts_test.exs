@@ -7,7 +7,11 @@ defmodule Deck.AccountsTest do
     alias Deck.Accounts.User
 
     @valid_attrs %{bio: "some bio", email: "some email", username: "some username"}
-    @update_attrs %{bio: "some updated bio", email: "some updated email", username: "some updated username"}
+    @update_attrs %{
+      bio: "some updated bio",
+      email: "some updated email",
+      username: "some updated username"
+    }
     @invalid_attrs %{bio: nil, email: nil, username: nil}
 
     def user_fixture(attrs \\ %{}) do

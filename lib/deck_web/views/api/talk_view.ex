@@ -1,6 +1,9 @@
 defmodule DeckWeb.Api.TalkView do
   use DeckWeb, :view
+
   alias DeckWeb.Api.TalkView
+  alias DeckWeb.Api.TalkImageView
+
   alias Deck.AudioFile
   alias Deck.MotionCaptureFile
 
@@ -23,7 +26,8 @@ defmodule DeckWeb.Api.TalkView do
       motion_capture: motion_capture_url(talk),
       theme: talk.theme,
       deck: talk.deck,
-      edit: can_edit
+      edit: can_edit,
+      images: render_many(talk.images, TalkImageView, "talk_image.json")
     }
   end
 

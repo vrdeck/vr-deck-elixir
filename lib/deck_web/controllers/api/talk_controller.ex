@@ -4,10 +4,12 @@ defmodule DeckWeb.Api.TalkController do
   alias Deck.Talks
   alias Deck.Auth
 
-  action_fallback DeckWeb.FallbackController
+  action_fallback(DeckWeb.FallbackController)
 
   def index(conn, _params) do
-    talk = Talks.list_talks()
+    talk =
+      Talks.list_talks()
+
     render(conn, "index.json", talk: talk)
   end
 

@@ -4,6 +4,7 @@ defmodule Deck.Talks.Talk do
 
   import Ecto.Changeset
 
+  alias Deck.Talks.TalkImage
   alias Deck.AudioFile
   alias Deck.MotionCaptureFile
   alias Deck.Accounts.User
@@ -12,13 +13,14 @@ defmodule Deck.Talks.Talk do
   @file_fields [:audio, :motion_capture]
 
   schema "talk" do
-    field :audio, AudioFile.Type
-    field :motion_capture, MotionCaptureFile.Type
-    field :deck, :map
-    field :theme, :map
-    field :name, :string
-    field :slug, :string
-    belongs_to :user, User, type: :string
+    field(:audio, AudioFile.Type)
+    field(:motion_capture, MotionCaptureFile.Type)
+    field(:deck, :map)
+    field(:theme, :map)
+    field(:name, :string)
+    field(:slug, :string)
+    belongs_to(:user, User, type: :string)
+    has_many(:images, TalkImage)
 
     timestamps()
   end
