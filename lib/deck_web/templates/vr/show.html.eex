@@ -1,0 +1,18 @@
+<a-scene
+  fetch-talk="<%= talk_json(@talk) %>"
+  keyboard-slide
+  bind__speaker-recorder="record: record; slide: slide"
+  bind__speaker-replayer="play: play"
+  speaker-replayer="motionCapture: #motion-capture"
+  bind__voice-recorder="record: record"
+  <%= if @can_edit do %>
+    bind__deck-uploader="id: talk.id"
+  <% end %>
+>
+  <%= render "_assets.html", talk: @talk %>
+  <%= render "_world.html" %>
+  <%= render "_controls.html", can_edit: @can_edit %>
+  <%= render "_deck.html", can_edit: @can_edit %>
+  <%= render "_speaker.html", can_edit: @can_edit %>
+  <%= render "_user.html", can_edit: @can_edit %>
+</a-scene>

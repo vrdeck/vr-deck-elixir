@@ -1,0 +1,68 @@
+<a-assets>
+  <img
+    id="groundTexture"
+    src="https://cdn.aframe.io/a-painter/images/floor.jpg"
+    crossorigin="anonymous"
+  />
+  <img
+    id="skyTexture"
+    src="https://cdn.aframe.io/a-painter/images/sky.jpg"
+    crossorigin="anonymous"
+  />
+
+  <a-mixin
+    id="deck"
+    geometry="primitive: plane; height: 5; width: 20"
+    material="transparent: true; opacity: 0"
+  ></a-mixin>
+
+  <a-mixin
+    id="slide__text"
+    class="slide__text"
+    material="color: white"
+  ></a-mixin>
+
+  <a-mixin id="action-button" scale="0.075 0.075 0.075"></a-mixin>
+
+  <a-asset-item
+    id="optimerBoldFont"
+    src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
+  ></a-asset-item>
+
+  <a-asset-item
+    id="avatar-default-mtl"
+    src="./models/avatar-default/materials.mtl"
+  ></a-asset-item>
+  <a-asset-item
+    id="avatar-default-obj"
+    src="./models/avatar-default/model.obj"
+  ></a-asset-item>
+
+  <a-asset-item
+    id="avatar-alien-mtl"
+    src="./models/avatar-alien/materials.mtl"
+  ></a-asset-item>
+  <a-asset-item
+    id="avatar-alien-obj"
+    src="./models/avatar-alien/model.obj"
+  ></a-asset-item>
+
+  <a-asset-item
+    id="left-hand"
+    src="https://cdn.aframe.io/controllers/hands/leftHand.glb"
+  ></a-asset-item>
+  <a-asset-item
+    id="right-hand"
+    src="https://cdn.aframe.io/controllers/hands/rightHand.glb"
+  ></a-asset-item>
+
+  <a-asset-item id="lectern" src="./models/lectern/lectern.glb"></a-asset-item>
+
+  <%= for image <- @talk.images do %>
+    <img id="image-<%= image.id %>" src="<%= image_url(image) %>" crossorigin />
+  <% end %>
+
+  <audio id="audio" src="<%= audio_url(@talk) %>" preload="auto" crossorigin></audio>
+
+  <a-asset-item id="motion-capture" src="<%= motion_capture_url(@talk) %>"></a-asset-item>
+</a-assets>

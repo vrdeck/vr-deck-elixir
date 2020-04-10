@@ -30,6 +30,13 @@ defmodule DeckWeb.Router do
     get("/auth/:provider/callback", AuthController, :callback)
   end
 
+  scope "/", DeckWeb do
+    pipe_through([:browser, :maybe_browser_auth])
+
+    # VR
+    resources("/", VrController, only: [:show])
+  end
+
   scope "/api", DeckWeb.Api do
     pipe_through([:api, :maybe_browser_auth])
 

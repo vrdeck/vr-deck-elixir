@@ -1,0 +1,92 @@
+<a-entity id="controls" position="0 0 -0.75">
+  <a-entity
+    id="lectern"
+    gltf-model="#lectern"
+    rotation="0 -90 0"
+    position="0 0.15 0"
+    scale="0.5 0.5 0.5"
+  >
+  </a-entity>
+
+  <%= if !@can_edit do %>
+    <a-entity
+      id="lectern-viewer-row"
+      position="0 1.075 0"
+      rotation="15 0 0"
+    >
+      <a-box
+        class="action-button"
+        mixin="action-button"
+        scale="0.1 0.1 0.075"
+        bind__color-switch="on: play"
+        color-switch="onColor: green; offColor: darkgreen"
+        trigger-action="action: togglePlay"
+      ></a-box>
+    </a-entity>
+  <% end %>
+
+  <%= if @can_edit do %>
+    <a-entity
+      id="lectern-top-row"
+      position="0 1.1 -0.1"
+      rotation="15 0 0"
+      layout="type: line; plane: xy; margin: 0.1; align: center"
+    >
+      <a-box
+        class="action-button"
+        mixin="action-button"
+        bind__color-switch="on: mirror"
+        color-switch="onColor: blue; offColor: darkblue"
+        trigger-action="action: toggleMirror"
+      ></a-box>
+
+      <a-box
+        class="action-button"
+        mixin="action-button"
+        bind__color-switch="on: play"
+        color-switch="onColor: green; offColor: darkgreen"
+        trigger-action="action: togglePlay"
+      ></a-box>
+
+      <a-box
+        class="action-button"
+        mixin="action-button"
+        bind__color-switch="on: record"
+        color-switch="onColor: red; offColor: darkred"
+        trigger-action="action: toggleRecord"
+      ></a-box>
+
+      <a-box
+        class="action-button"
+        mixin="action-button"
+        color="black"
+        trigger-action="action: nextSlide"
+      ></a-box>
+    </a-entity>
+
+    <a-entity
+      id="lectern-save-row"
+      position="0 1.05 0.1"
+      rotation="15 0 0"
+      layout="type: line; plane: xy; margin: 0.1; align: center"
+      bind__show-buttons="newRecording"
+    >
+      <!-- Reset -->
+      <a-box
+        class="action-button"
+        mixin="action-button"
+        color="purple"
+        trigger-action="action: loadTalk"
+      ></a-box>
+
+      <!-- Upload -->
+      <a-box
+        class="action-button"
+        mixin="action-button"
+        bind__color-switch="on: uploading"
+        color-switch="onColor: darkorange; offColor: orange"
+        trigger-action="action: uploadData"
+      ></a-box>
+    </a-entity>
+  <% end %>
+</a-entity>
