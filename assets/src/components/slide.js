@@ -1,5 +1,3 @@
-import { getTalk } from "../store/talk";
-
 import { imageId } from "../lib/image";
 
 /**
@@ -25,7 +23,14 @@ AFRAME.registerComponent("slide", {
     this.y = 0;
 
     // Render new slide
-    const { deck } = getTalk();
+    const fetchTalk = this.el.closest("[fetch-talk]").components["fetch-talk"];
+
+    if (!fetchTalk) return;
+
+    this.talk = fetchTalk.talk;
+
+    const { deck } = this.talk;
+
     if (deck) {
       const slide = deck.slides[show];
       slide.forEach(this.renderLine, this);
@@ -46,7 +51,7 @@ AFRAME.registerComponent("slide", {
 
     slideElement.setAttribute("mixin", "slide__text");
 
-    const theme = getTalk().theme;
+    const { theme } = this.talk;
     const themeStyles = theme.styles[element.kind] || theme.styles.p;
     const fontSize = themeStyles.fontSize;
 

@@ -6,7 +6,6 @@
       obj-model="obj: #avatar-default-obj; mtl: #avatar-default-mtl;"
     >
       <a-entity
-        bind-toggle__sound="talkLoaded"
         bind__sound="src: audioUrl"
         bind__voice-player="play: play"
       ></a-entity>

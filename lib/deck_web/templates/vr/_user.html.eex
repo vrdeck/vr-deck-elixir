@@ -1,9 +1,12 @@
 <a-entity
   id="leftHand"
   hand-controls="hand: left"
-  trigger-action="action: prevSlide; event: gripdown;"
-  record-position="target: #speakerLeft"
-  bind__record-position="mirror: mirror"
+    record-position="target: #speakerLeft"
+    bind__record-position="mirror: mirror"
+
+  <%= if @can_edit do %>
+    trigger-action="action: prevSlide; event: gripdown;"
+  <% end %>
 ></a-entity>
 
 <!-- todo controllerconnected event -->
@@ -14,12 +17,15 @@
   laser-controls
   raycaster="objects: .action-button:not(.hidden), .deck:not(.hidden);"
   bind__line="color: laserColor"
-  trigger-action__a-button="event: abuttondown; action: nextSlide;"
-  trigger-action__x-button="event: xbuttondown; action: prevSlide;"
-  trigger-action__pistol-start="event: gripdown; action: pointStart;"
-  trigger-action__pistol-end="event: gripup; action: pointEnd;"
-  record-position="target: #speakerRight"
-  bind__record-position="mirror: mirror"
+    record-position="target: #speakerRight"
+    bind__record-position="mirror: mirror"
+
+  <%= if @can_edit do %>
+    trigger-action__a-button="event: abuttondown; action: nextSlide;"
+    trigger-action__x-button="event: xbuttondown; action: prevSlide;"
+    trigger-action__pistol-start="event: gripdown; action: pointStart;"
+    trigger-action__pistol-end="event: gripup; action: pointEnd;"
+  <% end %>
 ></a-entity>
 
 <a-entity

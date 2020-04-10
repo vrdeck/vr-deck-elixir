@@ -1,12 +1,12 @@
 import { updatePosition } from "../lib/update-position";
 import { emit } from "../lib/action";
 
-import { getMotionCapture } from "../store/talk";
 import { ACTIONS } from "../store/state";
 
 AFRAME.registerComponent("speaker-replayer", {
   schema: {
-    play: { type: "boolean", default: false }
+    play: { type: "boolean", default: false },
+    motionCapture: { type: "string" },
   },
   dependencies: ["speaker-recorder"],
 
@@ -14,6 +14,14 @@ AFRAME.registerComponent("speaker-replayer", {
     this.recording = [];
     this.currentTime = 0;
     this.currentEventIndex = 0;
+
+    this.parseMotionCapture();
+  },
+
+  parseMotionCapture() {
+    const motionCaptureId = this.data.motionCapture;
+    const motionCaptureJson = document.querySelector(motionCaptureId).data;
+    this.motionCapture = JSON.parse(motionCaptureJson);
   },
 
   update(oldData) {
@@ -32,7 +40,7 @@ AFRAME.registerComponent("speaker-replayer", {
     const localRecording = this.el.components["speaker-recorder"].recording;
 
     this.recording =
-      localRecording.length > 0 ? localRecording : getMotionCapture();
+      localRecording.length > 0 ? localRecording : this.motionCapture;
 
     const firstFrame = this.recording[0];
     this.currentTime = firstFrame.timestamp;
@@ -66,5 +74,5 @@ AFRAME.registerComponent("speaker-replayer", {
   },
   handleActionEvent({ type, payload }) {
     emit(type, payload);
-  }
+  },
 });

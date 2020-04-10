@@ -39,18 +39,16 @@ AFRAME.registerState({
     slide: -1,
     slideCount: 0,
     highlightedLine: -1,
-    audioUrl: null,
-    motionCaptureUrl: null,
+    audioUrl: "#audio",
     newRecording: false,
     uploading: true,
     talk: { edit: false },
     pointing: false,
     laserColor: LASER_COLOR.blue
   },
-
   handlers: {
     [ACTIONS.loadedTalk](state, payload) {
-      state.audioUrl = `url(${payload.audio})`;
+      state.audioUrl = "#audio";
       state.slideCount = payload.deck.slides.length;
       state.slide = 0;
       state.talkLoaded = true;

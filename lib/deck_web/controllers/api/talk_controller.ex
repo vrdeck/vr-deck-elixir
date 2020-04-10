@@ -7,8 +7,7 @@ defmodule DeckWeb.Api.TalkController do
   action_fallback(DeckWeb.FallbackController)
 
   def index(conn, _params) do
-    talk =
-      Talks.list_talks()
+    talk = Talks.list_talks()
 
     render(conn, "index.json", talk: talk)
   end

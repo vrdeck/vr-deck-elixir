@@ -57,4 +57,12 @@
   ></a-asset-item>
 
   <a-asset-item id="lectern" src="./models/lectern/lectern.glb"></a-asset-item>
+
+  <%= for image <- @talk.images do %>
+    <img id="image-<%= image.id %>" src="<%= image_url(image) %>" crossorigin />
+  <% end %>
+
+  <audio id="audio" src="<%= audio_url(@talk) %>" preload="auto" crossorigin></audio>
+
+  <a-asset-item id="motion-capture" src="<%= motion_capture_url(@talk) %>"></a-asset-item>
 </a-assets>
