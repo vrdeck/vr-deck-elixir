@@ -8,7 +8,7 @@ defmodule DeckWeb.Api.TalkImageView do
     %{data: render_many(talk_images, TalkImageView, "talk_image.json")}
   end
 
-  def render("show.json", %{talk_image: talk_image} = params) do
+  def render("show.json", %{talk_image: talk_image}) do
     %{data: render_one(talk_image, TalkImageView, "talk_image.json")}
   end
 

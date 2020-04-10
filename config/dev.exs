@@ -27,7 +27,15 @@ config :deck, DeckWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: []
+  watchers: [
+    node: [
+      "node_modules/webpack/bin/webpack.js",
+      "--mode",
+      "development",
+      "--watch-stdin",
+      cd: Path.expand("../assets", __DIR__)
+    ]
+  ]
 
 config :arc,
   storage: Arc.Storage.GCS,
@@ -66,7 +74,7 @@ config :deck, Deck.Auth.Redirect, redirect_url: "http://localhost:3000/talks"
 config :deck, DeckWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg|mtl|obj)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/deck_web/(live|views)/.*(ex)$",
       ~r"lib/deck_web/templates/.*(eex)$"

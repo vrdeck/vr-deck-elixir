@@ -1,0 +1,36 @@
+<a-entity
+  id="leftHand"
+  hand-controls="hand: left"
+  trigger-action="action: prevSlide; event: gripdown;"
+  record-position="target: #speakerLeft"
+  bind__record-position="mirror: mirror"
+></a-entity>
+
+<!-- todo controllerconnected event -->
+
+<a-entity
+  id="rightHand"
+  hand-controls="hand: right"
+  laser-controls
+  raycaster="objects: .action-button:not(.hidden), .deck:not(.hidden);"
+  bind__line="color: laserColor"
+  trigger-action__a-button="event: abuttondown; action: nextSlide;"
+  trigger-action__x-button="event: xbuttondown; action: prevSlide;"
+  trigger-action__pistol-start="event: gripdown; action: pointStart;"
+  trigger-action__pistol-end="event: gripup; action: pointEnd;"
+  record-position="target: #speakerRight"
+  bind__record-position="mirror: mirror"
+></a-entity>
+
+<a-entity
+  camera
+  look-controls
+  position="0 1.6 0"
+  record-position="target: #speakerHead"
+  bind__record-position="mirror: mirror"
+>
+  <a-entity
+    cursor="rayOrigin: mouse"
+    raycaster="objects: .action-button:not(.hidden)"
+  ></a-entity>
+</a-entity>

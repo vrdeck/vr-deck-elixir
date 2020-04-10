@@ -1,0 +1,38 @@
+<a-entity id="speaker" rotation="0 180 0" position="1 0 -4">
+  <a-entity id="speakerHead">
+    <a-entity
+      rotation="0 -90 0"
+      geometry="primitive: box"
+      obj-model="obj: #avatar-default-obj; mtl: #avatar-default-mtl;"
+    >
+      <a-entity
+        bind-toggle__sound="talkLoaded"
+        bind__sound="src: audioUrl"
+        bind__voice-player="play: play"
+      ></a-entity>
+    </a-entity>
+  </a-entity>
+
+  <a-entity id="speakerLeft">
+    <a-box
+      height="0.1"
+      width="0.1"
+      depth="0.1"
+      rotation="0 0 90"
+      gltf-model="#left-hand"
+    ></a-box>
+  </a-entity>
+
+  <a-entity id="speakerRight">
+    <a-box
+      height="0.1"
+      width="0.1"
+      depth="0.1"
+      rotation="0 0 -90"
+      bind__raycaster="enabled: pointing; showLine: pointing"
+      raycaster="objects: .deck"
+      bind__line="color: laserColor"
+      gltf-model="#right-hand"
+    ></a-box>
+  </a-entity>
+</a-entity>

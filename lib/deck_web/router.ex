@@ -28,6 +28,9 @@ defmodule DeckWeb.Router do
     # Auth
     get("/auth/:provider", AuthController, :request)
     get("/auth/:provider/callback", AuthController, :callback)
+
+    # VR
+    resources("/", VrController, only: [:show])
   end
 
   scope "/api", DeckWeb.Api do

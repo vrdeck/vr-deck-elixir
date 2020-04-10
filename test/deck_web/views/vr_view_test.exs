@@ -1,3 +1,3 @@
-defmodule DeckWeb.PageViewTest do
+defmodule DeckWeb.VrViewTest do
   use DeckWeb.ConnCase, async: true
 end
