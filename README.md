@@ -1,4 +1,10 @@
-# Deck
+# VR Deck Elixir
+
+VR Deck is a tool for presenting and viewing short talks in virtual reality.
+
+This is an Elixir backend for saving talks.
+
+## Development
 
 To start your Phoenix server:
 
@@ -8,17 +14,9 @@ To start your Phoenix server:
 
 Now you can visit [`https://localhost.vrdeck.live`](https://localhost.vrdeck.live) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-- Official website: https://www.phoenixframework.org/
-- Guides: https://hexdocs.pm/phoenix/overview.html
-- Docs: https://hexdocs.pm/phoenix
-- Forum: https://elixirforum.com/c/phoenix-forum
-- Source: https://github.com/phoenixframework/phoenix
-
 ## Production
+
+This app is auto-deploying on [Heroku](https://dashboard.heroku.com/) on every push to `master`.
 
 ### Google Cloud Storage credentials
 
