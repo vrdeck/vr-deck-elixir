@@ -7,8 +7,9 @@
     rotation="0 180 0"
     bind__visible="!play"
   >
-  <a-entity position="-4 0 0">
-    <%= render_slides(@talk) %>
+    <a-entity position="-4 0 0">
+      <%= render_slides(@talk) %>
+    </a-entity>
   </a-entity>
 <% end %>
 

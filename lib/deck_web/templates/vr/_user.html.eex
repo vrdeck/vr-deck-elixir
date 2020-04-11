@@ -17,8 +17,8 @@
   laser-controls
   raycaster="objects: .action-button:not(.hidden), .deck:not(.hidden);"
   bind__line="color: laserColor"
-    record-position="target: #speakerRight"
-    bind__record-position="mirror: mirror"
+  record-position="target: #speakerRight"
+  bind__record-position="mirror: mirror"
 
   <%= if @can_edit do %>
     trigger-action__a-button="event: abuttondown; action: nextSlide;"
