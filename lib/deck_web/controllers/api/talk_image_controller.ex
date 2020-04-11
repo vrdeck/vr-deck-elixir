@@ -34,7 +34,7 @@ defmodule DeckWeb.Api.TalkImageController do
     end
   end
 
-  def update(conn, %{"my_talk_id" => talk_id, "id" => id}) do
+  def delete(conn, %{"my_talk_id" => talk_id, "id" => id}) do
     user = Auth.current_user(conn)
 
     talk_id

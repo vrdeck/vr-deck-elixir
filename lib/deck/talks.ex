@@ -60,7 +60,7 @@ defmodule Deck.Talks do
   end
 
   def get_image!(talk, talk_image_id) do
-    Repo.get_by!(Talk, talk: talk, id: talk_image_id)
+    Repo.get_by!(TalkImage, talk_id: talk.id, id: talk_image_id)
   end
 
   def with_images(talk_or_talks) do
