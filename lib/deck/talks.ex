@@ -17,7 +17,7 @@ defmodule Deck.Talks do
   end
 
   def list_talks() do
-    Talk
+    from(t in Talk, where: not t.private)
     |> Repo.all()
     |> with_images()
   end

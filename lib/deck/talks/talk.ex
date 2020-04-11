@@ -9,7 +9,7 @@ defmodule Deck.Talks.Talk do
   alias Deck.MotionCaptureFile
   alias Deck.Accounts.User
 
-  @fields [:name, :slug, :theme, :deck]
+  @fields [:name, :slug, :theme, :deck, :private]
   @file_fields [:audio, :motion_capture]
 
   schema "talk" do
@@ -19,6 +19,7 @@ defmodule Deck.Talks.Talk do
     field(:theme, :map)
     field(:name, :string)
     field(:slug, :string)
+    field(:private, :boolean, default: false)
     belongs_to(:user, User, type: :string)
     has_many(:images, TalkImage)
 
