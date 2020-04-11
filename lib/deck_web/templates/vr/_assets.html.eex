@@ -17,8 +17,12 @@
   ></a-mixin>
 
   <a-mixin
+    id="slide"
+    bind__slide="show: slide"
+  ></a-mixin>
+
+  <a-mixin
     id="slide__text"
-    class="slide__text"
     material="color: white"
   ></a-mixin>
 

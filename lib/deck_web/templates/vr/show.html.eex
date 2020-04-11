@@ -12,7 +12,7 @@
   <%= render "_assets.html", talk: @talk %>
   <%= render "_world.html" %>
   <%= render "_controls.html", can_edit: @can_edit %>
-  <%= render "_deck.html", can_edit: @can_edit %>
+  <%= render "_deck.html", talk: @talk, can_edit: @can_edit %>
   <%= render "_speaker.html", can_edit: @can_edit %>
   <%= render "_user.html", can_edit: @can_edit %>
 </a-scene>
