@@ -76,7 +76,7 @@ defmodule Deck.Talks do
 
     # Hack to work around ids not populated until record is inserted, but img needs an ID.
     with {:ok, image} <- Repo.insert(image),
-         {:ok, image} <- image |> IO.inspect() |> TalkImage.changeset(attrs) |> Repo.update() do
+         {:ok, image} <- image |> TalkImage.changeset(attrs) |> Repo.update() do
       {:ok, image}
     else
       {:error, changeset} -> {:error, changeset}

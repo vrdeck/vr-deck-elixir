@@ -4,6 +4,7 @@ defmodule DeckWeb.VrView do
   alias Deck.AudioFile
   alias Deck.MotionCaptureFile
   alias Deck.ImageFile
+  alias Deck.Talks.TalkImage
 
   def audio_url(talk) do
     AudioFile.url({talk.audio, talk})
@@ -35,20 +36,18 @@ defmodule DeckWeb.VrView do
   end
 
   def render_slides(talk) do
-    theme = talk.theme
-
     talk.deck["slides"]
     |> Enum.with_index()
     |> Enum.map(fn {slide, i} ->
-      render_slide(slide, i, theme)
+      render_slide(slide, i, talk)
     end)
   end
 
-  def render_slide(slide, i, theme) do
+  def render_slide(slide, i, talk) do
     {elements, _} =
       slide
       |> Enum.reduce({[], 0}, fn slide, {elements, y} ->
-        {element, y} = render_slide_line(slide, y, theme)
+        {element, y} = render_slide_line(slide, y, talk)
 
         {[element | elements], y}
       end)
@@ -62,19 +61,30 @@ defmodule DeckWeb.VrView do
     )
   end
 
-  def render_slide_line(%{"kind" => "img", "image" => image}, y, _) do
-    element =
-      content_tag("a-image", "",
-        src: "#image-#{image}",
-        position: "2.5 #{y} 0",
-        height: 5,
-        width: 5
-      )
+  def render_slide_line(%{"kind" => "img", "image" => image_id}, y, talk) do
+    talk.images
+    |> Enum.find(fn %{id: id} -> id == image_id end)
+    |> case do
+      %TalkImage{height: height, width: width} ->
+        ratio = width / height
 
-    {element, y - 5}
+        element =
+          content_tag("a-image", "",
+            src: "#image-#{image_id}",
+            position: "2.5 #{y} 0",
+            height: 5,
+            width: 5 * ratio
+          )
+
+        {element, y - 5}
+
+      nil ->
+        {[], y}
+    end
   end
 
-  def render_slide_line(%{"kind" => kind, "content" => content}, y, %{"styles" => styles}) do
+  def render_slide_line(%{"kind" => kind, "content" => content}, y, talk) do
+    styles = talk.theme["styles"]
     theme_styles = styles[kind] || styles["p"]
     font_size = theme_styles["fontSize"]
 

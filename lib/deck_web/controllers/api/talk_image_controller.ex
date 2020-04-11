@@ -18,6 +18,9 @@ defmodule DeckWeb.Api.TalkImageController do
         conn
         |> put_status(:created)
         |> render("show.json", talk_image: talk_image)
+
+      {:error, changeset} ->
+        {:error, changeset}
     end
   end
 
@@ -31,6 +34,9 @@ defmodule DeckWeb.Api.TalkImageController do
     |> case do
       {:ok, %TalkImage{} = talk_image} ->
         render(conn, "show.json", talk_image: talk_image)
+
+      {:error, changeset} ->
+        {:error, changeset}
     end
   end
 

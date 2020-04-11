@@ -15,7 +15,10 @@ defmodule DeckWeb.Api.TalkImageView do
   def render("talk_image.json", %{talk_image: talk_image}) do
     %{
       id: talk_image.id,
-      image: image_url(talk_image)
+      image: image_url(talk_image),
+      filename: talk_image.filename,
+      width: talk_image.width,
+      height: talk_image.height
     }
   end
 
