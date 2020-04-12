@@ -14,7 +14,9 @@ export const ACTIONS = {
   uploadDataSuccess: "uploadDataSuccess",
   uploadDataFailure: "uploadDataFailure",
   pointStart: "pointStart",
-  pointEnd: "pointEnd"
+  pointEnd: "pointEnd",
+  controllerConnectedRight: "controllerConnectedRight",
+  controllerConnectedLeft: "controllerConnectedLeft"
 };
 
 const LASER_COLOR = {
@@ -44,7 +46,11 @@ AFRAME.registerState({
     uploading: true,
     talk: { edit: false },
     pointing: false,
-    laserColor: LASER_COLOR.blue
+    laserColor: LASER_COLOR.blue,
+    controller: {
+      left: false,
+      right: false
+    }
   },
   handlers: {
     [ACTIONS.loadedTalk](state, payload) {
@@ -119,6 +125,12 @@ AFRAME.registerState({
     [ACTIONS.pointEnd](state) {
       state.pointing = false;
       state.laserColor = LASER_COLOR.blue;
+    },
+    [ACTIONS.controllerConnectedRight](state) {
+      state.controller.right = true;
+    },
+    [ACTIONS.controllerConnectedLeft](state) {
+      state.controller.left = true;
     }
   }
 });

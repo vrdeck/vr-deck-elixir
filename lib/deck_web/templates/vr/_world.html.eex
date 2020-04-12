@@ -1,8 +1,6 @@
-<a-cylinder
-  id="ground"
-  src="#groundTexture"
-  radius="32"
-  height="0.2"
-></a-cylinder>
+<a-entity 
+  id="world"
+  environment="preset: forest"
+></a-entity>
 
-<a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+<a-light id="deck-light" type="point" position="0 5 -1"></a-light>

@@ -6,7 +6,7 @@ import { ACTIONS } from "../store/state";
 AFRAME.registerComponent("speaker-replayer", {
   schema: {
     play: { type: "boolean", default: false },
-    motionCapture: { type: "string" },
+    motionCapture: { type: "string" }
   },
   dependencies: ["speaker-recorder"],
 
@@ -74,5 +74,5 @@ AFRAME.registerComponent("speaker-replayer", {
   },
   handleActionEvent({ type, payload }) {
     emit(type, payload);
-  },
+  }
 });

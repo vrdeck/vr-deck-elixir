@@ -3,7 +3,6 @@
     id="lectern"
     gltf-model="#lectern"
     rotation="0 -90 0"
-    position="0 0.15 0"
     scale="0.5 0.5 0.5"
   >
   </a-entity>
@@ -11,7 +10,7 @@
   <%= if !@can_edit do %>
     <a-entity
       id="lectern-viewer-row"
-      position="0 1.075 0"
+      position="0 1.060 0"
       rotation="15 0 0"
     >
       <a-box
@@ -28,7 +27,7 @@
   <%= if @can_edit do %>
     <a-entity
       id="lectern-top-row"
-      position="0 1.1 -0.1"
+      position="0 0.95 -0.1"
       rotation="15 0 0"
       layout="type: line; plane: xy; margin: 0.1; align: center"
     >
@@ -66,7 +65,7 @@
 
     <a-entity
       id="lectern-save-row"
-      position="0 1.05 0.1"
+      position="0 0.9 0.1"
       rotation="15 0 0"
       layout="type: line; plane: xy; margin: 0.1; align: center"
       bind__show-buttons="newRecording"

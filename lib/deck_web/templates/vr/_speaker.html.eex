@@ -12,7 +12,10 @@
     </a-entity>
   </a-entity>
 
-  <a-entity id="speakerLeft">
+  <a-entity
+    id="speakerLeft"
+    bind__visible="play || controller.left"
+  >
     <a-box
       height="0.1"
       width="0.1"
@@ -22,7 +25,10 @@
     ></a-box>
   </a-entity>
 
-  <a-entity id="speakerRight">
+  <a-entity
+    id="speakerRight"
+    bind__visible="play || controller.left"
+  >
     <a-box
       height="0.1"
       width="0.1"

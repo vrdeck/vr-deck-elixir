@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.69999999"
-     inkscape:cx="-23.070898"
+     inkscape:cx="310.50054"
      inkscape:cy="148.49366"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -36,11 +36,11 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="958"
+     inkscape:window-height="1008"
+     inkscape:window-x="953"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -64,44 +64,65 @@
        width="135.46666"
        height="135.46666"
        x="-19.029409"
-       y="38.061119" />
+       y="38.061119"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-editor\public\logo512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="opacity:1;fill:#f7fff7;fill-opacity:1;stroke:#292f36;stroke-width:5.0058012;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4589"
        width="130.46086"
        height="82.296547"
        x="-16.52651"
-       y="58.744469" />
+       y="58.744469"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-editor\public\logo512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="opacity:1;fill:#4ecdc4;fill-opacity:1;stroke:#292f36;stroke-width:5.0058012;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 99.057133,115.34864 c 0,21.17902 -16.208486,47.46572 -36.202669,47.46572 -19.994182,0 -36.202671,-26.2867 -36.202671,-47.46572 2e-6,-21.179025 16.208489,-35.13 36.202671,-35.13 19.994183,1e-6 36.202669,13.950975 36.202669,35.13 z"
        id="path4548"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssss" />
+       sodipodi:nodetypes="sssss"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-editor\public\logo512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#292f36;stroke-width:4.83271456;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 73.583808,137.60658 c 0,6.51662 -4.92375,11.79939 -10.997514,11.79939 -6.073763,0 -10.997524,-5.28277 -10.997524,-11.79939"
        id="path4551"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csc" />
+       sodipodi:nodetypes="csc"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-editor\public\logo512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="opacity:1;fill:#ffe66d;fill-opacity:1;stroke:#292f36;stroke-width:4.88936043;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 21.14641,90.945131 c 27.565739,-6.963064 59.038614,-5.577247 83.81762,0 -0.26579,13.878429 -1.48487,26.803579 -3.14316,39.289509 -25.959917,-5.75268 -52.088038,-6.80928 -78.055162,0 -2.080535,-12.49279 -3.322314,-25.40495 -2.619298,-39.289509 z"
        id="rect4554"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-editor\public\logo512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#f7fff7;fill-opacity:1;fill-rule:evenodd;stroke:#292f36;stroke-width:5.01015;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 29.869809,97.649557 C 29.75,105.63562 30.17037,113.08151 31.478818,119.63933"
        id="path4580"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-editor\public\logo512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="opacity:1;fill:#292f36;fill-opacity:1;stroke:#292f36;stroke-width:5.0058012;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 62.854362,80.218613 c -8.63533,0 -16.562713,2.604123 -22.784952,7.267089 15.38113,-1.840203 31.199943,-1.559794 45.843409,0.204216 C 79.65047,82.897752 71.615951,80.218613 62.854362,80.218613 Z"
        id="path4584"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sccs" />
+       sodipodi:nodetypes="sccs"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-editor\public\logo512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="opacity:1;fill:#292f36;fill-opacity:1;stroke:none;stroke-width:7.05555534;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4603"
@@ -248,5 +269,5 @@
            height="44.446712"
            x="-1474.8228"
            y="-939.49292" /></flowRegion><flowPara
-         id="flowPara851"></flowPara></flowRoot>  </g>
+         id="flowPara851" /></flowRoot>  </g>
 </svg>

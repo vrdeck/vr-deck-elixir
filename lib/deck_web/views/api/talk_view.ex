@@ -26,6 +26,7 @@ defmodule DeckWeb.Api.TalkView do
       motion_capture: motion_capture_url(talk),
       theme: talk.theme,
       deck: talk.deck,
+      private: talk.private,
       edit: can_edit,
       images: render_many(talk.images, TalkImageView, "talk_image.json")
     }
