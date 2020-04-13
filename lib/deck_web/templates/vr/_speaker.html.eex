@@ -14,7 +14,7 @@
 
   <a-entity
     id="speakerLeft"
-    bind__visible="play || controller.left"
+    bind__visible="hasPlayed || controller.left"
   >
     <a-box
       height="0.1"
@@ -27,7 +27,7 @@
 
   <a-entity
     id="speakerRight"
-    bind__visible="play || controller.left"
+    bind__visible="hasPlayed || controller.left"
   >
     <a-box
       height="0.1"

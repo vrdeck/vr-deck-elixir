@@ -21,7 +21,12 @@ AFRAME.registerComponent("speaker-replayer", {
   parseMotionCapture() {
     const motionCaptureId = this.data.motionCapture;
     const motionCaptureJson = document.querySelector(motionCaptureId).data;
-    this.motionCapture = JSON.parse(motionCaptureJson);
+
+    try {
+      this.motionCapture = JSON.parse(motionCaptureJson);
+    } catch (e) {
+      this.motionCapture = [];
+    }
   },
 
   update(oldData) {
@@ -35,14 +40,20 @@ AFRAME.registerComponent("speaker-replayer", {
   },
 
   startPlayback() {
-    this.currentEventIndex = 0;
-
     const localRecording = this.el.components["speaker-recorder"].recording;
 
     this.recording =
       localRecording.length > 0 ? localRecording : this.motionCapture;
 
     const firstFrame = this.recording[0];
+
+    // Do nothing if there's no recording
+    if (!firstFrame) {
+      emit(ACTIONS.playFinished);
+      return;
+    }
+
+    this.currentEventIndex = 0;
     this.currentTime = firstFrame.timestamp;
   },
 

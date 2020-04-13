@@ -15,7 +15,6 @@ AFRAME.registerComponent("trigger-action", {
     const el = this.el;
 
     el.addEventListener(event, _e => {
-      console.log("emit", action);
       emit(action);
     });
   }

@@ -6,9 +6,9 @@ defmodule DeckWeb.Api.MyTalkController do
   alias Deck.Auth
   alias DeckWeb.Api.TalkView
 
-  plug :put_view, TalkView
+  plug(:put_view, TalkView)
 
-  action_fallback DeckWeb.FallbackController
+  action_fallback(DeckWeb.FallbackController)
 
   def index(conn, _params) do
     user = Auth.current_user(conn)
@@ -21,6 +21,8 @@ defmodule DeckWeb.Api.MyTalkController do
     user = Auth.current_user(conn)
 
     with {:ok, %Talk{} = talk} <- Talks.create_talk(talk_params, user) do
+      talk = Talks.with_images(talk)
+
       conn
       |> put_status(:created)
       |> render("show.json", talk: talk)

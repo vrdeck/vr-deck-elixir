@@ -37,6 +37,7 @@ AFRAME.registerState({
     play: false,
     record: false,
     mirror: true,
+    hasPlayed: false,
     talkLoaded: false,
     slide: -1,
     slideCount: 0,
@@ -88,6 +89,7 @@ AFRAME.registerState({
       state.play = !state.play;
 
       if (state.play) {
+        state.hasPlayed = true;
         state.record = false;
         state.mirror = false;
       }
