@@ -6,7 +6,7 @@
     trigger-action__connected="event: controllerconnected; action: controllerConnectedLeft;"
 
   <%= if @can_edit do %>
-    trigger-action="action: prevSlide; event: gripdown;"
+    trigger-action__x-button="event: xbuttondown; action: prevSlide;"
   <% end %>
 ></a-entity>
 
@@ -24,7 +24,6 @@
 
   <%= if @can_edit do %>
     trigger-action__a-button="event: abuttondown; action: nextSlide;"
-    trigger-action__x-button="event: xbuttondown; action: prevSlide;"
     trigger-action__pistol-start="event: gripdown; action: pointStart;"
     trigger-action__pistol-end="event: gripup; action: pointEnd;"
   <% end %>
