@@ -35,6 +35,7 @@ defmodule DeckWeb.VrView do
     }
   end
 
+  @doc "Pre-render all the slides in the deck."
   def render_slides(talk) do
     talk.deck["slides"]
     |> Enum.with_index()
@@ -99,7 +100,7 @@ defmodule DeckWeb.VrView do
           |> to_attribute()
       )
 
-    {element, y - font_size}
+    {element, y - (font_size + 0.1)}
   end
 
   def to_attribute(keyword) do
