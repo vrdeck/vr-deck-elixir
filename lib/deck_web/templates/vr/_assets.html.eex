@@ -55,7 +55,9 @@
     <img id="image-<%= image.id %>" src="<%= image_url(image) %>" crossorigin />
   <% end %>
 
-  <audio id="audio" src="<%= audio_url(@talk) %>" preload="auto" crossorigin></audio>
+  <%= if @talk.audio do %>
+    <audio id="audio" src="<%= audio_url(@talk) %>" preload="auto" crossorigin></audio>
+  <% end %>
 
   <a-asset-item id="motion-capture" src="<%= motion_capture_url(@talk) %>"></a-asset-item>
 </a-assets>
