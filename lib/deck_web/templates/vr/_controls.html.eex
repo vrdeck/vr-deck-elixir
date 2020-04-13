@@ -1,16 +1,17 @@
-<a-entity id="controls" position="0 0 -0.75">
+<a-entity id="controls" position="0 0 -1">
   <a-entity
     id="lectern"
     gltf-model="#lectern"
     rotation="0 -90 0"
     scale="0.5 0.5 0.5"
+    shadow
   >
   </a-entity>
 
   <%= if !@can_edit do %>
     <a-entity
       id="lectern-viewer-row"
-      position="0 1.060 0"
+      position="0 0.95 0"
       rotation="15 0 0"
     >
       <a-box
