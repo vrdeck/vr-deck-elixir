@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><%= assigns[:page_title] || "VR Deck" %></title>
 
+    <meta
+      name="description"
+      content="A tool for presenting and viewing short talks in virtual reality."
+    />
+
     <%= csrf_meta_tag() %>
 
     <%= render_existing @view_module, "scripts.html", assigns %>
