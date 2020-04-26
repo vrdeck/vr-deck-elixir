@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.69999999"
-     inkscape:cx="310.50054"
-     inkscape:cy="148.49366"
+     inkscape:zoom="0.49497474"
+     inkscape:cx="131.41229"
+     inkscape:cy="907.76753"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -36,11 +36,11 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="958"
-     inkscape:window-height="1008"
-     inkscape:window-x="953"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -203,61 +203,6 @@
        inkscape:export-filename="D:\repos\vrdeck\vr-deck-elixir\assets\static\favicon-32.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <g
-       id="g861"
-       transform="matrix(0.02732292,0,0,0.02732292,-48.243422,4.1771113)"
-       inkscape:export-filename="D:\repos\vrdeck\vr-deck-elixir\assets\static\wordmark.png"
-       inkscape:export-xdpi="436.36365"
-       inkscape:export-ydpi="436.36365">
-      <rect
-         style="opacity:1;fill:#f7fff7;fill-opacity:1;stroke:#292f36;stroke-width:9.7769556;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect4641"
-         width="254.80638"
-         height="160.73544"
-         x="-1544.7191"
-         y="-662.4588" />
-      <path
-         style="opacity:1;fill:#4ecdc4;fill-opacity:1;stroke:#292f36;stroke-width:9.7769556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m -1318.9698,-551.90376 c 0,41.36529 -31.6572,92.7065 -70.7083,92.7065 -39.0512,0 -70.7084,-51.34121 -70.7084,-92.7065 0,-41.36528 31.6572,-68.61328 70.7084,-68.61328 39.0511,0 70.7083,27.248 70.7083,68.61328 z"
-         id="path4643"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="sssss" />
-      <path
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#292f36;stroke-width:9.43889618;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m -1368.7224,-508.43121 c 0,12.72778 -9.6167,23.04568 -21.4795,23.04568 -11.8628,0 -21.4795,-10.3179 -21.4795,-23.04568"
-         id="path4645"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="csc" />
-      <path
-         style="opacity:1;fill:#ffe66d;fill-opacity:1;stroke:#292f36;stroke-width:9.54953289;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m -1471.1392,-599.56686 c 53.8394,-13.59974 115.3098,-10.89306 163.7063,0 -0.5191,27.1063 -2.9001,52.35073 -6.139,76.73733 -50.7029,-11.23572 -101.7344,-13.29939 -152.4514,0 -4.0636,-24.39998 -6.4889,-49.61905 -5.1159,-76.73733 z"
-         id="path4647"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
-      <path
-         style="fill:#f7fff7;fill-opacity:1;fill-rule:evenodd;stroke:#292f36;stroke-width:9.7769556;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m -1454.1013,-586.47228 c -0.234,15.59779 0.5871,30.14054 3.1426,42.94877"
-         id="path4649"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="opacity:1;fill:#292f36;fill-opacity:1;stroke:#292f36;stroke-width:9.7769556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m -1389.6783,-620.51709 c -16.8659,0 -32.3491,5.08617 -44.5019,14.19353 30.0413,-3.59415 60.9374,-3.04647 89.5379,0.39886 -12.2311,-9.3597 -27.9235,-14.59239 -45.036,-14.59239 z"
-         id="path4651"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="sccs" />
-      <text
-         id="text4655"
-         y="-507.27332"
-         x="-1239.8995"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:192.03874207px;line-height:125%;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#292f36;fill-opacity:1;stroke:none;stroke-width:4.80096817px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;fill:#292f36;fill-opacity:1;stroke-width:4.80096817px"
-           y="-507.27332"
-           x="-1239.8995"
-           id="tspan4653"
-           sodipodi:role="line">VR Deck</tspan></text>
-    </g>
     <flowRoot
        xml:space="preserve"
        id="flowRoot845"
@@ -269,5 +214,72 @@
            height="44.446712"
            x="-1474.8228"
            y="-939.49292" /></flowRegion><flowPara
-         id="flowPara851" /></flowRoot>  </g>
+         id="flowPara851" /></flowRoot>    <rect
+       style="opacity:1;fill:none;fill-opacity:0;stroke:none;stroke-width:11.72847557;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect842"
+       width="147.65314"
+       height="57.804634"
+       x="-185.97264"
+       y="-150.70305"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-elixir\assets\static\social.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="opacity:1;fill:#ff6b6b;fill-opacity:1;stroke:none;stroke-width:30.53662109;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect844"
+       width="317.5"
+       height="166.6875"
+       x="-319.80295"
+       y="-218.11739"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-elixir\assets\static\social.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       y="-196.87338"
+       x="-298.09161"
+       height="124.19951"
+       width="274.0773"
+       id="rect4641"
+       style="opacity:1;fill:#f7fff7;fill-opacity:1;stroke:#292f36;stroke-width:7.93678617;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-elixir\assets\static\social.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g863"
+       transform="matrix(1.6623037,0,0,1.6623037,90.073088,-238.72764)"
+       inkscape:export-filename="D:\repos\vrdeck\vr-deck-elixir\assets\static\social.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         style="opacity:1;fill:#4ecdc4;fill-opacity:1;stroke:#292f36;stroke-width:3.64759231;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -81.54193,70.735545 c 0,15.432586 -11.81067,34.586995 -26.37989,34.586995 -14.56924,0 -26.37993,-19.154409 -26.37993,-34.586995 0,-15.432583 11.81069,-25.598281 26.37993,-25.598281 14.56922,0 26.37989,10.165698 26.37989,25.598281 z"
+         id="path4643"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssss" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#292f36;stroke-width:3.52146888;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -100.10366,86.95431 c 0,4.748486 -3.58779,8.597895 -8.01358,8.597895 -4.42577,0 -8.01359,-3.849409 -8.01359,-8.597895"
+         id="path4645"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csc" />
+      <path
+         style="opacity:1;fill:#ffe66d;fill-opacity:1;stroke:#292f36;stroke-width:3.56274533;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -138.31337,52.953369 c 20.08644,-5.0738 43.01986,-4.06399 61.07563,0 -0.19369,10.112834 -1.08195,19.53104 -2.29033,28.629207 -18.91625,-4.191829 -37.95512,-4.961744 -56.87666,0 -1.51604,-9.10316 -2.42087,-18.511904 -1.90864,-28.629207 z"
+         id="path4647"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#f7fff7;fill-opacity:1;fill-rule:evenodd;stroke:#292f36;stroke-width:3.64759231;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -131.95686,57.838701 c -0.0872,5.819232 0.21906,11.24485 1.17244,16.023353"
+         id="path4649"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="opacity:1;fill:#292f36;fill-opacity:1;stroke:#292f36;stroke-width:3.64759231;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -107.92189,45.137245 c -6.29233,0 -12.06883,1.89755 -16.6028,5.29533 11.20783,-1.340907 22.73456,-1.13658 33.40486,0.148814 -4.56318,-3.491922 -10.41772,-5.444137 -16.80206,-5.444137 z"
+         id="path4651"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sccs" />
+    </g>
+  </g>
 </svg>

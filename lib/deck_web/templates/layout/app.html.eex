@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><%= assigns[:page_title] || "VR Deck" %></title>
 
+    <meta property="og:title" content="<%= assigns[:page_title] || "VR Deck" %>">
+    <meta property="og:description" content="A tool for presenting and viewing short talks in virtual reality.">
+    <meta property="og:image" content="<%= social_image(@conn)  %>">
+    <meta property="og:url" content="<%= current_url(@conn) %>">
+
+    <meta name="twitter:title" content="<%= assigns[:page_title] || "VR Deck" %>">
+    <meta name="twitter:description" content="A tool for presenting and viewing short talks in virtual reality.">
+    <meta name="twitter:image" content="<%= social_image(@conn)  %>">
+    <meta name="twitter:card" content="summary">
+
     <meta
       name="description"
       content="A tool for presenting and viewing short talks in virtual reality."
