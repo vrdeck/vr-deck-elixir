@@ -13,4 +13,7 @@ import "aframe-layout-component";
 
 import "phoenix_html";
 
-import "./store/state.js";
+import "./styles/web-controls.css";
+
+import "./lib/web-controls";
+import "./store/state";

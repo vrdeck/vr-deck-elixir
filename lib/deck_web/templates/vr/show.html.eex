@@ -15,4 +15,6 @@
   <%= render "_deck.html", talk: @talk, can_edit: @can_edit %>
   <%= render "_speaker.html", can_edit: @can_edit %>
   <%= render "_user.html", can_edit: @can_edit %>
+
+  <%= render "_web_controls.html", can_edit: @can_edit %>
 </a-scene>
