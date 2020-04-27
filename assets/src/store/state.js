@@ -18,12 +18,12 @@ export const ACTIONS = {
   controllerConnectedRight: "controllerConnectedRight",
   controllerConnectedLeft: "controllerConnectedLeft",
   showUi: "showUi",
-  hideUi: "hideUi"
+  hideUi: "hideUi",
 };
 
 const LASER_COLOR = {
   red: "red",
-  blue: "#74BEC1"
+  blue: "#74BEC1",
 };
 
 export const RECORDABLE_ACTIONS = [
@@ -31,7 +31,7 @@ export const RECORDABLE_ACTIONS = [
   ACTIONS.nextSlide,
   ACTIONS.prevSlide,
   ACTIONS.pointStart,
-  ACTIONS.pointEnd
+  ACTIONS.pointEnd,
 ];
 
 AFRAME.registerState({
@@ -52,9 +52,9 @@ AFRAME.registerState({
     laserColor: LASER_COLOR.blue,
     controller: {
       left: false,
-      right: false
+      right: false,
     },
-    uiShown: false
+    uiShown: false,
   },
   handlers: {
     [ACTIONS.loadedTalk](state, payload) {
@@ -138,10 +138,10 @@ AFRAME.registerState({
       state.controller.left = true;
     },
     [ACTIONS.showUi](state) {
-      state.uiShown = true
+      state.uiShown = true;
     },
     [ACTIONS.hideUi](state) {
-      state.uiShown = false
-    }
-  }
+      state.uiShown = false;
+    },
+  },
 });

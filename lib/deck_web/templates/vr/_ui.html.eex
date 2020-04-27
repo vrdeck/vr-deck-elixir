@@ -1,24 +1,21 @@
 <a-plane
-id="ui"
-height="0.5"
-width="0.75"
-color="#dfe2f2"
-material="transparent: true; opacity: 0.2"
+  id="ui"
+  height="0.5"
+  width="0.75"
+  color="#dfe2f2"
+  material="transparent: true; opacity: 0.2"
 >
   <%= if !@can_edit do %>
     <a-entity
       id="ui-viwer-row"
       layout="type: line; plane: xy; margin: 0.25; align: center"
     >
-      <a-entity
-        class="action-button"
-        mixin="flat-button"
-        trigger-action="action: togglePlay"
-        bind__color-switch="on: play"
-        color-switch="onColor: green; offColor: darkgreen"
-      >
-        <a-entity mixin="button-text" text="value: Play"></a-entity>
-      </a-entity>
+      <%= render "_touch_button.html",
+        value: "Play",
+        action: "togglePlay",
+        on: "play",
+        on_color: "green",
+        off_color: "darkgreen" %>
     </a-entity>
   <% end %>
 
@@ -28,50 +25,38 @@ material="transparent: true; opacity: 0.2"
       position="0 0.075 0"
       layout="type: line; plane: xy; margin: 0.25; align: center"
     >
-      <a-entity
-        class="action-button"
-        mixin="flat-button"
-        trigger-action="action: togglePlay"
-        bind__color-switch="on: play"
-        color-switch="onColor: green; offColor: darkgreen"
-      >
-        <a-entity mixin="button-text" text="value: Play"></a-entity>
-      </a-entity>
+      <%= render "_touch_button.html",
+        value: "Play",
+        action: "togglePlay",
+        on: "play",
+        on_color: "green",
+        off_color: "darkgreen" %>
 
-      <a-entity
-        class="action-button"
-        mixin="flat-button"
-        trigger-action="action: toggleRecord"
-        bind__color-switch="on: record"
-        color-switch="onColor: red; offColor: darkred"
-      >
-        <a-entity mixin="button-text" text="value: Record"></a-entity>
-      </a-entity>
+      <%= render "_touch_button.html",
+        value: "Record",
+        action: "toggleRecord",
+        on: "record",
+        on_color: "red",
+        off_color: "darkred" %>
     </a-entity>
 
     <a-entity
       id="ui-save-row"
       position="0 -0.075 0"
       layout="type: line; plane: xy; margin: 0.25; align: center"
+      bind__show-buttons="newRecording"
     >
-      <a-entity
-        class="action-button"
-        mixin="flat-button"
-        trigger-action="action: loadTalk"
-        material="color: purple"
-      >
-        <a-entity mixin="button-text" text="value: Reset"></a-entity>
-      </a-entity>
+      <%= render "_touch_button.html",
+        value: "Reset",
+        action: "loadTalk",
+        color: "purple" %>
 
-      <a-entity
-        class="action-button"
-        mixin="flat-button"
-        bind__color-switch="on: uploading"
-        color-switch="onColor: darkorange; offColor: orange"
-        trigger-action="action: uploadData"
-      >
-        <a-entity mixin="button-text" text="value: Save"></a-entity>
-      </a-entity>
+      <%= render "_touch_button.html",
+        value: "Save",
+        action: "uploadData",
+        on: "uploading",
+        on_color: "darkorange",
+        off_color: "orange" %>
     </a-entity>
   <% end %>
 </a-plane>

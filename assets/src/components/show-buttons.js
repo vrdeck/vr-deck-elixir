@@ -6,7 +6,7 @@ AFRAME.registerComponent("show-buttons", {
 
     this.el.object3D.visible = visible;
 
-    this.el.querySelectorAll(".action-button").forEach((button) => {
+    this.el.querySelectorAll(".action-button, .touch-button").forEach((button) => {
       if (visible) {
         button.classList.remove("hidden");
       } else {
