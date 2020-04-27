@@ -15,6 +15,18 @@
     material="color: white"
   ></a-mixin>
 
+  <a-mixin
+    id="flat-button"
+    geometry="primitive: plane; height: 0.1; width: 0.2"
+    material="transparent: true; opacity: 0.3"
+    color-switch="component: material"
+  ></a-mixin>
+
+  <a-mixin
+    id="button-text"
+    text="color: #dfe2f2; align: center"
+  ></a-mixin>
+
   <a-mixin id="action-button" scale="0.075 0.075 0.075"></a-mixin>
 
   <a-asset-item

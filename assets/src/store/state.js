@@ -16,7 +16,9 @@ export const ACTIONS = {
   pointStart: "pointStart",
   pointEnd: "pointEnd",
   controllerConnectedRight: "controllerConnectedRight",
-  controllerConnectedLeft: "controllerConnectedLeft"
+  controllerConnectedLeft: "controllerConnectedLeft",
+  showUi: "showUi",
+  hideUi: "hideUi"
 };
 
 const LASER_COLOR = {
@@ -51,7 +53,8 @@ AFRAME.registerState({
     controller: {
       left: false,
       right: false
-    }
+    },
+    uiShown: false
   },
   handlers: {
     [ACTIONS.loadedTalk](state, payload) {
@@ -133,6 +136,12 @@ AFRAME.registerState({
     },
     [ACTIONS.controllerConnectedLeft](state) {
       state.controller.left = true;
+    },
+    [ACTIONS.showUi](state) {
+      state.uiShown = true
+    },
+    [ACTIONS.hideUi](state) {
+      state.uiShown = false
     }
   }
 });
