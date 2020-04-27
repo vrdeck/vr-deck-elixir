@@ -1,0 +1,19 @@
+<a-entity
+  class="action-button"
+  mixin="flat-button"
+  trigger-action__click="action: <%= @action %>"
+  <%= if assigns[:color] do %>
+    color="<%= @color %>"
+  <% else %>
+    bind__color-switch="on: <%= @on %>"
+    color-switch="onColor: <%= @on_color %>; offColor: <%= @off_color %>"
+  <% end %>
+>
+  <a-entity mixin="button-text" text="value: <%= @value %>"></a-entity>
+
+  <a-entity
+    class="touch-button" mixin="touch-target"
+    trigger-action__hitclosest="action: <%= @action %>"
+    data-aabb-collider-dynamic="true"
+  ></a-entity>
+</a-entity>

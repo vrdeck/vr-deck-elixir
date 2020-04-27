@@ -10,6 +10,7 @@ requireAll(require.context("./components/", true, /\.js$/));
 import "aframe-text-geometry-component";
 import "aframe-state-component";
 import "aframe-layout-component";
+import "aframe-aabb-collider-component";
 
 import "phoenix_html";
 

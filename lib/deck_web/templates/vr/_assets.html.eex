@@ -15,7 +15,25 @@
     material="color: white"
   ></a-mixin>
 
+  <a-mixin
+    id="flat-button"
+    geometry="primitive: box; height: 0.1; width: 0.2; depth: 0.01"
+    material="transparent: true; opacity: 0.3"
+    color-switch="component: material"
+  ></a-mixin>
+
+  <a-mixin
+    id="button-text"
+    text="color: #dfe2f2; align: center"
+  ></a-mixin>
+
   <a-mixin id="action-button" scale="0.075 0.075 0.075"></a-mixin>
+
+  <a-mixin
+    id="touch-target" 
+    geometry="primitive: box; height: 0.01; width: 0.01; depth: 0.009"
+    material="transparent: true; opacity: 0"
+  ></a-mixin>
 
   <a-asset-item
     id="optimerBoldFont"

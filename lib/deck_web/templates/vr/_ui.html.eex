@@ -1,0 +1,62 @@
+<a-plane
+  id="ui"
+  height="0.5"
+  width="0.75"
+  color="#dfe2f2"
+  material="transparent: true; opacity: 0.2"
+>
+  <%= if !@can_edit do %>
+    <a-entity
+      id="ui-viwer-row"
+      layout="type: line; plane: xy; margin: 0.25; align: center"
+    >
+      <%= render "_touch_button.html",
+        value: "Play",
+        action: "togglePlay",
+        on: "play",
+        on_color: "green",
+        off_color: "darkgreen" %>
+    </a-entity>
+  <% end %>
+
+  <%= if @can_edit do %>
+    <a-entity
+      id="ui-top-row"
+      position="0 0.075 0"
+      layout="type: line; plane: xy; margin: 0.25; align: center"
+    >
+      <%= render "_touch_button.html",
+        value: "Play",
+        action: "togglePlay",
+        on: "play",
+        on_color: "green",
+        off_color: "darkgreen" %>
+
+      <%= render "_touch_button.html",
+        value: "Record",
+        action: "toggleRecord",
+        on: "record",
+        on_color: "red",
+        off_color: "darkred" %>
+    </a-entity>
+
+    <a-entity
+      id="ui-save-row"
+      position="0 -0.075 0"
+      layout="type: line; plane: xy; margin: 0.25; align: center"
+      bind__show-buttons="newRecording"
+    >
+      <%= render "_touch_button.html",
+        value: "Reset",
+        action: "loadTalk",
+        color: "purple" %>
+
+      <%= render "_touch_button.html",
+        value: "Save",
+        action: "uploadData",
+        on: "uploading",
+        on_color: "darkorange",
+        off_color: "orange" %>
+    </a-entity>
+  <% end %>
+</a-plane>

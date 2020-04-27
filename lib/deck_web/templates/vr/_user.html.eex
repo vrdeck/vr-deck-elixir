@@ -1,14 +1,20 @@
 <a-entity
   id="leftHand"
   hand-controls="hand: left"
-    record-position="target: #speakerLeft"
-    bind__record-position="mirror: mirror"
-    trigger-action__connected="event: controllerconnected; action: controllerConnectedLeft;"
+  bind__ui="uiShown: uiShown"
+  record-position="target: #speakerLeft"
+  bind__record-position="mirror: mirror"
+  trigger-action__controllerconnected="action: controllerConnectedLeft;"
 
   <%= if @can_edit do %>
-    trigger-action__x-button="event: xbuttondown; action: prevSlide;"
+    trigger-action__xbuttondown="action: prevSlide;"
   <% end %>
-></a-entity>
+>
+
+  <a-entity position="0.3 0 0" rotation="0 0 -90" bind__show-buttons="uiShown">
+    <%= render "_ui.html", can_edit: @can_edit %>
+  </a-entity>
+</a-entity>
 
 <!-- todo controllerconnected event -->
 
@@ -16,16 +22,17 @@
   id="rightHand"
   hand-controls="hand: right"
   laser-controls
+  aabb-collider="objects: .touch-button:not(.hidden)"
   raycaster="objects: .action-button:not(.hidden), .deck:not(.hidden);"
   bind__line="color: laserColor"
   record-position="target: #speakerRight"
   bind__record-position="mirror: mirror"
-  trigger-action__connected="event: controllerconnected; action: controllerConnectedRight;"
+  trigger-action__controllerconnected="action: controllerConnectedRight;"
 
   <%= if @can_edit do %>
-    trigger-action__a-button="event: abuttondown; action: nextSlide;"
-    trigger-action__pistol-start="event: gripdown; action: pointStart;"
-    trigger-action__pistol-end="event: gripup; action: pointEnd;"
+    trigger-action__abuttondown="action: nextSlide;"
+    trigger-action__gripdown="action: pointStart;"
+    trigger-action__gripup="action: pointEnd;"
   <% end %>
 ></a-entity>
 
