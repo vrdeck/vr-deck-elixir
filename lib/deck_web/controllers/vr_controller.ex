@@ -5,19 +5,29 @@ defmodule DeckWeb.VrController do
   alias Deck.Talks
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    # TODO: Real index page
+    conn
+    |> put_status(:not_found)
+    |> render("404.html")
   end
 
   def show(conn, %{"id" => slug}) do
     user = Auth.current_user(conn)
 
-    talk = Talks.get_talk_by_slug!(slug)
-    can_edit = user && user.id == talk.user_id
+    case Talks.get_talk_by_slug(slug) do
+      {:ok, talk} ->
+        can_edit = user && user.id == talk.user_id
 
-    render(conn, "show.html",
-      talk: talk,
-      can_edit: can_edit,
-      page_title: "VR Deck | #{talk.name}"
-    )
+        render(conn, "show.html",
+          talk: talk,
+          can_edit: can_edit,
+          page_title: "VR Deck | #{talk.name}"
+        )
+
+      {:error, _} ->
+        conn
+        |> put_status(:not_found)
+        |> render("404.html")
+    end
   end
 end

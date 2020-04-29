@@ -38,7 +38,7 @@
 
 <a-entity
   camera
-  look-controls
+  custom-look-controls
   position="0 1.6 0"
   record-position="target: #speakerHead"
   bind__record-position="mirror: mirror"

@@ -14,4 +14,6 @@ import "aframe-aabb-collider-component";
 
 import "phoenix_html";
 
-import "./store/state.js";
+import "./styles/web-control-panel.css";
+
+import "./store/state";

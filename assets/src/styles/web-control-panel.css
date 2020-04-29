@@ -1,0 +1,43 @@
+.web-control-panel {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.web-control-panel--hidden {
+  display: none;
+}
+
+.web-control-panel__play-button {
+  margin-top: 16px;
+  background-color: #4ecdc4;
+  border: 2px solid #292f36;
+  color: #292f36;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.web-control-panel__play-button--playing {
+  background-color: #1f6e68;
+}
+
+.web-control-panel__home-button {
+  margin-top: 16px;
+  background-color: #ffe66d;
+  border: 2px solid #292f36;
+  color: #292f36;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+}

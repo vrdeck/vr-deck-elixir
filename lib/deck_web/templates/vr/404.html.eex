@@ -1,0 +1,17 @@
+<a-scene>
+  <a-assets>
+    <a-asset-item
+      id="optimerBoldFont"
+      src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
+    ></a-asset-item>
+  </a-assets>
+
+  <%= render "_world.html" %>
+
+  <a-entity position="-3.5 1.6 -4">
+    <a-entity
+      text-geometry="value: 404 Talk Not Found; font: #optimerBoldFont; size: 0.5"
+      material="color: white"
+    ></a-entity>
+  </a-entity>
+</a-scene>
