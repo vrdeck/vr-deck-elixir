@@ -32,6 +32,20 @@ defmodule Deck.Talks do
     |> with_images()
   end
 
+  def get_talk_by_slug(slug) do
+    case Repo.get_by(Talk, slug: slug) do
+      nil -> {:error, :not_found}
+      talk -> {:ok, with_images(talk)}
+    end
+  end
+
+  def get_talk_by_slug(slug, user) do
+    case Repo.get_by(Talk, slug: slug, user_id: user.id) do
+      nil -> {:error, :not_found}
+      talk -> {:ok, with_images(talk)}
+    end
+  end
+
   def get_talk_by_slug!(slug) do
     Repo.get_by!(Talk, slug: slug)
     |> with_images()

@@ -1,9 +1,0 @@
-<div class="web-controls" bind__visible="talkLoaded">
-  <button
-    id="play-button"
-    class="web-controls__play-button"
-    trigger-action="action: togglePlay"
-  >
-    Play
-  </button>
-</div>

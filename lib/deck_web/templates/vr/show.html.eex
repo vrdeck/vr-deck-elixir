@@ -5,6 +5,7 @@
   bind__speaker-replayer="play: play"
   speaker-replayer="motionCapture: #motion-capture"
   bind__voice-recorder="record: record"
+  bind__web-control-panel="play: play"
   <%= if @can_edit do %>
     bind__deck-uploader="id: talk.id"
   <% end %>
@@ -16,5 +17,5 @@
   <%= render "_speaker.html", can_edit: @can_edit %>
   <%= render "_user.html", can_edit: @can_edit %>
 
-  <%= render "_web_controls.html", can_edit: @can_edit %>
+  <%= render "_web_control_panel.html", can_edit: @can_edit %>
 </a-scene>

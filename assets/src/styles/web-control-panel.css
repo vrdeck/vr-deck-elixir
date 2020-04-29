@@ -1,4 +1,4 @@
-.web-controls {
+.web-control-panel {
   position: absolute;
   left: 16px;
   bottom: 16px;
@@ -8,7 +8,11 @@
   flex-direction: column;
 }
 
-.web-controls__play-button {
+.web-control-panel--hidden {
+  display: none;
+}
+
+.web-control-panel__play-button {
   margin-top: 16px;
   background-color: #4ecdc4;
   border: 2px solid #292f36;
@@ -21,11 +25,11 @@
   font-size: 13px;
 }
 
-.web-controls__play-button--playing {
+.web-control-panel__play-button--playing {
   background-color: #1f6e68;
 }
 
-.web-controls__home-button {
+.web-control-panel__home-button {
   margin-top: 16px;
   background-color: #ffe66d;
   border: 2px solid #292f36;
