@@ -1,4 +1,4 @@
-<a-scene>
+<a-scene custom-look-controls>
   <a-assets>
     <a-asset-item
       id="optimerBoldFont"
@@ -10,7 +10,7 @@
 
   <a-entity position="-3.5 1.6 -4">
     <a-entity
-      text-geometry="value: 404 Talk Not Found; font: #optimerBoldFont; size: 0.5"
+      text-geometry="value: <%= @message %>; font: #optimerBoldFont; size: 0.5"
       material="color: white"
     ></a-entity>
   </a-entity>

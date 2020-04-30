@@ -30,7 +30,7 @@
   <a-mixin id="action-button" scale="0.075 0.075 0.075"></a-mixin>
 
   <a-mixin
-    id="touch-target" 
+    id="touch-target"
     geometry="primitive: box; height: 0.01; width: 0.01; depth: 0.009"
     material="transparent: true; opacity: 0"
   ></a-mixin>
@@ -66,8 +66,6 @@
     id="right-hand"
     src="https://cdn.aframe.io/controllers/hands/rightHand.glb"
   ></a-asset-item>
-
-  <a-asset-item id="lectern" src="./models/lectern/lectern.glb"></a-asset-item>
 
   <%= for image <- @talk.images do %>
     <img id="image-<%= image.id %>" src="<%= image_url(image) %>" crossorigin />

@@ -13,8 +13,6 @@
   </a-entity>
 <% end %>
 
-<a-entity id="deck-mirrored" class="deck" mixin="deck" position="0 2.5 -5">
-  <a-entity position="-4 0 0">
-    <%= render_slides(@talk) %>
-  </a-entity>
+<a-entity id="deck-mirrored" class="deck" mixin="deck" position="-3 2.5 -5">
+  <%= render_slides(@talk) %>
 </a-entity>

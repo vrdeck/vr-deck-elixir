@@ -8,7 +8,7 @@ defmodule DeckWeb.VrController do
     # TODO: Real index page
     conn
     |> put_status(:not_found)
-    |> render("404.html")
+    |> render("404.html", message: "Search page coming soon")
   end
 
   def show(conn, %{"id" => slug}) do
@@ -27,7 +27,7 @@ defmodule DeckWeb.VrController do
       {:error, _} ->
         conn
         |> put_status(:not_found)
-        |> render("404.html")
+        |> render("404.html", message: "404 Talk Not Found")
     end
   end
 end

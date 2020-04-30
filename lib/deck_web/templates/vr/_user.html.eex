@@ -11,12 +11,16 @@
   <% end %>
 >
 
+  <%# UI for hands VR %>
   <a-entity position="0.3 0 0" rotation="0 0 -90" bind__show-buttons="uiShown">
     <%= render "_ui.html", can_edit: @can_edit %>
   </a-entity>
 </a-entity>
 
-<!-- todo controllerconnected event -->
+<%# UI for head-only VR %>
+<a-entity position="-1 1.6" rotation="0 90 0" bind__show-buttons="!controllerConnectedLeft">
+  <%= render "_ui.html", can_edit: @can_edit %>
+</a-entity>
 
 <a-entity
   id="rightHand"
