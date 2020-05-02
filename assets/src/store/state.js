@@ -49,7 +49,8 @@ AFRAME.registerState({
     uploading: true,
     talk: { edit: false },
     pointing: false,
-    laserColor: LASER_COLOR.blue,
+    speakerLaser: false,
+    userLaserColor: LASER_COLOR.blue,
     controller: {
       left: false,
       right: false,
@@ -96,9 +97,11 @@ AFRAME.registerState({
         state.record = false;
         state.mirror = false;
       }
+      computeState(state);
     },
     [ACTIONS.playFinished](state) {
       state.play = false;
+      computeState(state);
     },
     [ACTIONS.toggleRecord](state, _payload) {
       state.record = !state.record;
@@ -107,6 +110,7 @@ AFRAME.registerState({
         state.play = false;
         state.mirror = true;
       }
+      computeState(state);
     },
     [ACTIONS.audioRecorded](state, { url }) {
       state.audioUrl = `url(${url})`;
@@ -125,11 +129,11 @@ AFRAME.registerState({
     },
     [ACTIONS.pointStart](state) {
       state.pointing = true;
-      state.laserColor = LASER_COLOR.red;
+      computeState(state);
     },
     [ACTIONS.pointEnd](state) {
       state.pointing = false;
-      state.laserColor = LASER_COLOR.blue;
+      computeState(state);
     },
     [ACTIONS.controllerConnectedRight](state) {
       state.controller.right = true;
@@ -145,3 +149,13 @@ AFRAME.registerState({
     },
   },
 });
+
+// TODO: make this a method once computeState is fixed https://github.com/supermedium/superframe/issues/240
+function computeState(state, _payload) {
+  // Calculate user laser color.
+  state.userLaserColor =
+    !state.play && state.pointing ? LASER_COLOR.red : LASER_COLOR.blue;
+
+  // Show speaker laser.
+  state.speakerLaser = (state.play || state.record) && state.pointing;
+}

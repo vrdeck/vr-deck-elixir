@@ -34,9 +34,9 @@
       width="0.1"
       depth="0.1"
       rotation="0 0 -90"
-      bind__raycaster="enabled: pointing; showLine: pointing"
-      raycaster="objects: .deck"
-      bind__line="color: laserColor"
+      raycaster="objects: .deck; showLine: true"
+      line="color: red"
+      bind__line="visible: speakerLaser"
       gltf-model="#right-hand"
     ></a-box>
   </a-entity>

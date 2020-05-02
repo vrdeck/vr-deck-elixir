@@ -6,6 +6,10 @@ defmodule DeckWeb.VrView do
   alias Deck.ImageFile
   alias Deck.Talks.TalkImage
 
+  @default_height 2.5
+  @image_height 5
+  @line_space 0.1
+
   def audio_url(talk) do
     AudioFile.url({talk.audio, talk})
   end
@@ -45,9 +49,11 @@ defmodule DeckWeb.VrView do
   end
 
   def render_slide(slide, i, talk) do
+    total_height = total_height(slide, talk)
+
     {elements, _} =
       slide
-      |> Enum.reduce({[], 0}, fn slide, {elements, y} ->
+      |> Enum.reduce({[], total_height}, fn slide, {elements, y} ->
         {element, y} = render_slide_line(slide, y, talk)
 
         {[element | elements], y}
@@ -72,12 +78,12 @@ defmodule DeckWeb.VrView do
         element =
           content_tag("a-image", "",
             src: "#image-#{image_id}",
-            position: "2.5 #{y} 0",
+            position: "2.5 #{y - @image_height / 2} 0",
             height: 5,
             width: 5 * ratio
           )
 
-        {element, y - 5}
+        {element, y - @image_height + @line_space}
 
       nil ->
         {[], y}
@@ -85,9 +91,7 @@ defmodule DeckWeb.VrView do
   end
 
   def render_slide_line(%{"kind" => kind, "content" => content}, y, talk) do
-    styles = talk.theme["styles"]
-    theme_styles = styles[kind] || styles["p"]
-    font_size = theme_styles["fontSize"]
+    font_size = font_size(kind, talk)
 
     element =
       content_tag(
@@ -100,7 +104,7 @@ defmodule DeckWeb.VrView do
           |> to_attribute()
       )
 
-    {element, y - (font_size + 0.1)}
+    {element, y - (font_size + @line_space)}
   end
 
   def to_attribute(keyword) do
@@ -110,5 +114,26 @@ defmodule DeckWeb.VrView do
     end)
     |> Enum.reverse()
     |> Enum.join("; ")
+  end
+
+  def total_height(slide, talk) do
+    height =
+      slide
+      |> Enum.map(&line_height(&1, talk))
+      |> Enum.sum()
+
+    max(height, @default_height)
+  end
+
+  def line_height(%{"kind" => "img"}, _talk), do: @image_height + @line_space
+
+  def line_height(%{"kind" => kind}, talk) do
+    font_size(kind, talk) + @line_space
+  end
+
+  def font_size(kind, talk) do
+    styles = talk.theme["styles"]
+    theme_styles = styles[kind] || styles["p"]
+    theme_styles["fontSize"]
   end
 end

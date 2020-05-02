@@ -28,7 +28,7 @@
   laser-controls
   aabb-collider="objects: .touch-button:not(.hidden)"
   raycaster="objects: .action-button:not(.hidden), .deck:not(.hidden);"
-  bind__line="color: laserColor"
+  bind__line="color: userLaserColor"
   record-position="target: #speakerRight"
   bind__record-position="mirror: mirror"
   trigger-action__controllerconnected="action: controllerConnectedRight;"
