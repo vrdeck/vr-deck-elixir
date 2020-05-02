@@ -19,6 +19,9 @@ export const ACTIONS = {
   controllerConnectedLeft: "controllerConnectedLeft",
   showUi: "showUi",
   hideUi: "hideUi",
+  movePlayTime: "movePlayTime",
+  updatePlayTime: "updatePlayTime",
+  setTotalPlayTime: "setTotalPlayTime",
 };
 
 const LASER_COLOR = {
@@ -56,6 +59,8 @@ AFRAME.registerState({
       right: false,
     },
     uiShown: false,
+    totalPlayTime: 0,
+    playTime: 0,
   },
   handlers: {
     [ACTIONS.loadedTalk](state, payload) {
@@ -146,6 +151,15 @@ AFRAME.registerState({
     },
     [ACTIONS.hideUi](state) {
       state.uiShown = false;
+    },
+    [ACTIONS.updatePlayTime](state, time) {
+      state.playTime = time;
+    },
+    [ACTIONS.movePlayTime](state, time) {
+      state.playTime = time;
+    },
+    [ACTIONS.setTotalPlayTime](state, time) {
+      state.totalPlayTime = time;
     },
   },
 });

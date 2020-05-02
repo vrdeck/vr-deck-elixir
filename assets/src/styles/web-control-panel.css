@@ -1,19 +1,25 @@
 .web-control-panel {
   position: absolute;
   left: 16px;
+  right: 16px;
   bottom: 16px;
   z-index: 1;
 
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .web-control-panel--hidden {
   display: none;
 }
 
-.web-control-panel__play-button {
+.web-control-panel__buttons {
   margin-top: 16px;
+  display: flex;
+}
+
+.web-control-panel__play-button {
   background-color: #4ecdc4;
   border: 2px solid #292f36;
   color: #292f36;
@@ -23,6 +29,7 @@
   font-weight: bold;
   text-transform: uppercase;
   font-size: 13px;
+  margin-right: 16px;
 }
 
 .web-control-panel__play-button--playing {
@@ -30,7 +37,6 @@
 }
 
 .web-control-panel__home-button {
-  margin-top: 16px;
   background-color: #ffe66d;
   border: 2px solid #292f36;
   color: #292f36;
@@ -40,4 +46,24 @@
   font-weight: bold;
   text-transform: uppercase;
   font-size: 13px;
+}
+
+.web-control-panel__progress-bar {
+  position: relative;
+  height: 4px;
+  background-color: #4ecdc4;
+  width: 100%;
+}
+
+.web-control-panel__progress-point {
+  position: absolute;
+  left: 0;
+  top: -6px;
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  background-color: #4ecdc4;
+  border: none;
+  padding: 0;
+  pointer-events: none;
 }

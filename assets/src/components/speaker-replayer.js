@@ -6,7 +6,7 @@ import { ACTIONS } from "../store/state";
 AFRAME.registerComponent("speaker-replayer", {
   schema: {
     play: { type: "boolean", default: false },
-    motionCapture: { type: "string" }
+    motionCapture: { type: "string" },
   },
   dependencies: ["speaker-recorder"],
 
@@ -14,8 +14,28 @@ AFRAME.registerComponent("speaker-replayer", {
     this.recording = [];
     this.currentTime = 0;
     this.currentEventIndex = 0;
+    this.firstFrame = null;
+    this.pause = false;
 
     this.parseMotionCapture();
+
+    this.throttledEmitTime = AFRAME.utils.throttle(
+      this.emitTime,
+      1000 / 24,
+      this
+    );
+
+    this.el.addEventListener(ACTIONS.movePlayTime, (event) => {
+      const time = event.detail + this.firstFrame.timestamp;
+      const index = this.recording.findIndex(
+        ({ timestamp }) => timestamp >= time
+      );
+
+      this.pause = true;
+      this.currentEventIndex = index;
+      this.currentTime = time;
+      this.pause = false;
+    });
   },
 
   parseMotionCapture() {
@@ -45,20 +65,22 @@ AFRAME.registerComponent("speaker-replayer", {
     this.recording =
       localRecording.length > 0 ? localRecording : this.motionCapture;
 
-    const firstFrame = this.recording[0];
+    this.firstFrame = this.recording[0];
 
     // Do nothing if there's no recording
-    if (!firstFrame) {
+    if (!this.firstFrame) {
       emit(ACTIONS.playFinished);
       return;
     }
 
     this.currentEventIndex = 0;
-    this.currentTime = firstFrame.timestamp;
+    this.currentTime = this.firstFrame.timestamp;
+
+    this.emitTotalTime();
   },
 
   tick(timestamp, delta) {
-    if (!this.data.play) return;
+    if (!this.data.play || this.pause) return;
 
     this.currentTime = this.currentTime + delta;
 
@@ -77,13 +99,27 @@ AFRAME.registerComponent("speaker-replayer", {
 
     // Finish playing when out of events
     if (this.currentEventIndex >= this.recording.length) {
+      // Emit final time.
+      this.emitTime();
+      // Finish playing.
       emit(ACTIONS.playFinished);
     }
+
+    this.throttledEmitTime();
   },
   handlePositionEvent({ target, position, rotation }) {
     updatePosition(target, position, rotation);
   },
   handleActionEvent({ type, payload }) {
     emit(type, payload);
-  }
+  },
+  emitTotalTime() {
+    const lastFrame = this.recording[this.recording.length - 1];
+
+    const totalPlayTime = lastFrame.timestamp - this.firstFrame.timestamp;
+    emit(ACTIONS.setTotalPlayTime, totalPlayTime);
+  },
+  emitTime() {
+    emit(ACTIONS.updatePlayTime, this.currentTime - this.firstFrame.timestamp);
+  },
 });

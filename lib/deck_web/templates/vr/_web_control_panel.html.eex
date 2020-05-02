@@ -1,9 +1,22 @@
 <div id="web-control-panel" class="web-control-panel web-control-panel--hidden" bind__visible="talkLoaded">
-  <button
-    id="play-button"
-    class="web-control-panel__play-button"
-    trigger-action="action: togglePlay"
-  >
-    Play
-  </button>
+
+  <div class="web-control-panel__progress-bar">
+    <button class="web-control-panel__progress-point"></button>
+  </div>
+
+  <div class="web-control-panel__buttons">
+    <button
+      id="play-button"
+      class="web-control-panel__play-button"
+      trigger-action="action: togglePlay"
+    >
+      Play
+    </button>
+
+    <a href="https://vrdeck.live">
+      <button class="web-control-panel__home-button">
+        More
+      </button>
+    </a>
+  </div>
 </div>

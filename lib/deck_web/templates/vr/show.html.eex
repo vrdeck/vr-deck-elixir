@@ -5,7 +5,7 @@
   bind__speaker-replayer="play: play"
   speaker-replayer="motionCapture: #motion-capture"
   bind__voice-recorder="record: record"
-  bind__web-control-panel="play: play"
+  bind__web-control-panel="play: play; playTime: playTime; totalPlayTime: totalPlayTime"
   <%= if @can_edit do %>
     bind__deck-uploader="id: talk.id"
   <% end %>
